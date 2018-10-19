@@ -1,3 +1,34 @@
+#main-container{
+  max-width: 1080px;
+  margin: auto;
+}
+/* MAIN TOOLBAR */
 .toolbar-container{
-  background-color: red;
+  background-color: #fff;
+}
+.toolbar-container  span{
+  color: #999;
+  font-size: 12px;
+  padding: 10px 15px;
+}
+.toolbar-container span:hover{
+  color: #99f;
+  cursor: pointer;
+}
+.infojobs-logo{
+  color: #3344aa!important;
+  font-size: 16px!important;
+}
+/* SUBTOOLBAR */
+.subtoolbar-container{
+  background-color: #e2e5e6;
+}
+.subtoolbar-container  span{
+  color: #2d3133;
+  font-size: 14px;
+  padding: 10px 15px;
+}
+.subtoolbar-container span:hover{
+  color: #167db7;
+  cursor: pointer;
 }
