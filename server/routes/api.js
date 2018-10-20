@@ -1,16 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const request = require('request');
 
 /* GET api listing. */
 router.get('/', (req, res) => {
   res.send('api works');
 });
 
-router.get('/auth/infojobs', passport.authenticate('oauth2'));
+router.get('/auth/example',
+  passport.authenticate('oauth2'));
 
-router.get('/auth/infojobs/callback',
-  passport.authenticate('oauth2', { failureRedirect: '/' }),
+router.get('/auth/example/callback',
+  passport.authenticate('oauth2', { failureRedirect: '/error' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/');

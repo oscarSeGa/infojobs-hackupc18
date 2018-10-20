@@ -9,13 +9,15 @@ import { MatchOfferViewComponent } from './match-offer-view/match-offer-view.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatRippleModule} from '@angular/material/core';
+import { ErrorComponent } from './error/error.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatRippleModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MatchOfferViewComponent
+    MatchOfferViewComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
