@@ -1,1 +1,43 @@
-{"personal_information":{"name":"Óscar","surname":"","email":"oscar.serrano7@gmail.com","birthday":"2018-10-21","gender":"male","country":"Spain","cp":"08027","place":"Barcelona","phone":""},"experience":[],"studies":[],"languages":[],"knowledge":[]}
+{
+    "personal_information":{
+       "name":"Xavier Algarra Torelló",
+       "surname":"Algarra",
+       "email":"xavier.algarra@est.fib.upc.edu",
+       "birthday":"1990-07-07",
+       "gender":"male",
+       "country":"Anguilla",
+       "cp":"08027",
+       "place":"barcelona",
+       "phone":939939939
+    },
+    "experience":[
+       {
+          "experience_job":"fasdfa",
+          "experience_role":"fasdfads",
+          "experience_first_date":"0132-08-31",
+          "experience_end_date":"13423-01-05"
+       }
+    ],
+    "studies":[
+       {
+          "studies_title":"goh",
+          "studies_first_date":"9999-09-07",
+          "studies_end_date":"7889-08-03",
+          "studies_center":"kjsgkj"
+       }
+    ],
+    "languages":[
+       {
+          "languages_name":"jhdsg",
+          "languages_speaking":"Nativo",
+          "languages_reading":"Nativo",
+          "languages_writing":"Nativo"
+       }
+    ],
+    "knowledge":[
+       {
+          "knwoledge_name":"kdskds",
+          "knowledge_level":"Alto"
+       }
+    ]
+ }

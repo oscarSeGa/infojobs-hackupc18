@@ -12,6 +12,9 @@ router.get('/', (req, res) => {
   router.route('/recomendations')
   .get(function (req, res) {
     var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
+    var user = JSON.parse(fs.readFileSync(Path.resolve(__dirname,'../../src/assets/user.json'),'utf8'));
+    console.log(user);
+    
     ofertas.offers.map(function(oferta) {
 
     });
