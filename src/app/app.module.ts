@@ -9,6 +9,8 @@ import { MatchOfferViewComponent } from './match-offer-view/match-offer-view.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,10 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
     MatIconModule,
     MatButtonModule,
     MatCheckboxModule,
-    FormsModule, 
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatChipsModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
