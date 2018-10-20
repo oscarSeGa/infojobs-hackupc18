@@ -12,12 +12,14 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { ErrorComponent } from './error/error.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
+import { CvComponent } from './cv/cv.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MatchOfferViewComponent,
-    ErrorComponent
+    ErrorComponent,
+    CvComponent
   ],
   imports: [
     BrowserModule,
