@@ -13,9 +13,10 @@ router.get('/', (req, res) => {
 
     var recomendaciones;
 
-    var user = JSON.parse(req.body)
-    var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
+    var user = req.query.userid
     console.log(user);
+    var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
+    
     
     ofertas.offers.map(function(oferta) {
       
