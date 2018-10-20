@@ -1,0 +1,41 @@
+.offer-card{
+  margin: 0 10px 5px 10px;
+  background-color: #eee;
+  cursor: pointer;
+  min-height: 50px;
+}
+.match-container{
+  background-color: #29a53d;
+  color: #eee;
+  padding: 1px 5px;
+}
+.match-container .match-num{
+  font-size: 9px;
+  font-weight: bold;
+}
+.match-container .match-lbl{
+  font-size: 8px;
+}
+.offer-info-txt{
+  color: #444;
+  font-size: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.vertical-separator{
+  height: 15px;
+  min-width: 1px;
+  background: #aaa;
+}
+/*chips */
+.chips-container{
+  padding-top: 6px;
+}
+.mat-chip-list{
+  margin: 0px 3px 6px 3px;
+}
+.mat-chip.mat-standard-chip{
+  font-size: 9px;
+  min-height: 0px;
+  padding: 9px;
+}

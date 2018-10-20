@@ -1,5 +1,31 @@
-<p>
-  match-offer-view works!
-  jeje
-</p>
+<div ngClass="section-container">
+  <div ngClass="offer-card" class="example-ripple-container mat-elevation-z4" matRipple
+     fxLayout="column" fxLayout.gt-xs="row wrap" fxLayoutAlign="space-between stretch">
+    <div fxLayout="column" fxLayoutAlign="center stretch" fxLayout.gt-xs="row" fxLayoutAlign.gt-xs="start stretch" fxLayoutGap="5px">
+      <div ngClass="match-container" fxLayout="column" fxLayoutAlign="center center">
+        <span ngClass="match-num">100%</span>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <span>The job of your dreams</span>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <span ngClass="offer-info-txt">Barcelona</span>
+          <div ngClass="vertical-separator"></div>
+          <span ngClass="offer-info-txt">99 interesados</span>
+        </div>
+      </div>
+    </div>
+    <div ngClass="chips-container" fxLayout="row wrap" fxLayoutAlign="center center">
+      <mat-chip-list>
+        <mat-chip color="accent" selected>Jornada Completa</mat-chip>
+      </mat-chip-list>
+      <mat-chip-list>
+        <mat-chip color="accent" selected>Jornada Completa</mat-chip>
+      </mat-chip-list>
+      <mat-chip-list>
+        <mat-chip color="accent" selected>Jornada Completa</mat-chip>
+      </mat-chip-list>
+
+    </div>
+  </div>
+</div>
 <a href="https://www.infojobs.net/api/api-login/api-login.xhtml?client_id=84295ab9c5ff4c288339c77620f445c3&redirect_uri=https://infojobshackupc2018.herokuapp.com/auth/infojobs/callback&scope=CV">INFOJOBS</a>
