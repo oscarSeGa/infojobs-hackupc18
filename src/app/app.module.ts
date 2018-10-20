@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { CvComponent } from './cv/cv.component';
 import { RegisterComponent } from './register/register.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { RegisterComponent } from './register/register.component';
     MatChipsModule,
     MatRippleModule,
     MatTooltipModule,
-    DragDropModule
+    DragDropModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

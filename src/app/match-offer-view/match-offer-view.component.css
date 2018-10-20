@@ -1,3 +1,8 @@
+.show-apply-action{
+  font-size: 12px;
+  color: #555;
+  font-weight: bold;
+}
 .offers-list-container{
   min-height: 100vh;
 }
@@ -103,11 +108,17 @@
   width: 100%;
   padding-bottom: 15px;
 }
+.swipe-container mat-icon{
+  font-size: 12px;
+  height: 12px;
+  width: 12px;
+  color: #555;
+}
 .swiped-cards-container{
   position: absolute;
-  z-index: -1;
   height: 100vh;
   width: 100vw;
+  z-index: -1;
 }
 .descarted-container{
   opacity: 0;
@@ -121,4 +132,9 @@
   z-index: -1;
   height: 100vh;
   width: 10vw;
+}
+/*  snackBar */
+::ng-deep .mat-snack-bar-container{
+  min-width: 250px!important;
+  font-size: 12px;
 }
