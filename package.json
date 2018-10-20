@@ -12,10 +12,6 @@
     "api": "nodemon index.js",
     "postinstall": "ng build --aot"
   },
-  "engines": {
-    "node": "~10.0.0",
-    "npm": "~6.4.1"
-  },
   "private": true,
   "dependencies": {
     "@angular/cli": "~7.0.1",
