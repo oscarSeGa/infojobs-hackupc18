@@ -24,17 +24,17 @@ export class RegisterComponent implements OnInit {
   public fifthForm: FormGroup;
   public countries: any[];
 
-  private errorMessage: String;
-  private successMessage: String;
-  private levels: String[] = ["Nulo", "Básico", "Intermedio", "Avanzado", "Nativo"];
-  private know_level: String[] = ["Bajo", "Medio", "Alto"]
-  private experienceJobs: any[] = [];
-  private studies: any[] = [];
-  private languages: any[] = [];
-  private knowledges: any[] = [];
+  public errorMessage: String;
+  public successMessage: String;
+  public levels: String[] = ["Nulo", "Básico", "Intermedio", "Avanzado", "Nativo"];
+  public know_level: String[] = ["Bajo", "Medio", "Alto"]
+  public experienceJobs: any[] = [];
+  public studies: any[] = [];
+  public languages: any[] = [];
+  public knowledges: any[] = [];
 
-  private sub1: Subscription;
-  private sub2: Subscription;
+  public sub1: Subscription;
+  public sub2: Subscription;
 
   constructor(private fb: FormBuilder, private registerService: RegisterService, private router: Router) {}
 
