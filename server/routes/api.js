@@ -1,4 +1,6 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 const router = express.Router();
 
 /* GET api listing. */
@@ -9,9 +11,21 @@ router.get('/', (req, res) => {
   router.route('/recomendations')
   .get(function (req, res) {
 
-    var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, './odertas.json'), 'utf8'));
+    var recomendaciones;
+
+    var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
+    ofertas.offers.map(function(oferta) {
+      
+      });
     
     return res.status(200).json(ofertas)
+  });
+
+  router.route('/countries')
+  .get(function (req, res) {
+    var countries = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/countries.json'), 'utf8'));
+    
+    return res.status(200).json(countries)
   });
 
 router.route('/test')
