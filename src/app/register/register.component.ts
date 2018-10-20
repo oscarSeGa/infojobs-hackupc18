@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 import { RegisterService } from './register.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,10 +18,20 @@ export class RegisterComponent implements OnInit {
   public forthForm: FormGroup;
   public fifthForm: FormGroup;
   public countries: any[];
-  private sub1: Subscription;
-  private errorMessage: String;
 
-  constructor(private fb: FormBuilder, private registerService: RegisterService) {}
+  private errorMessage: String;
+  private successMessage: String;
+  private levels: String[] = ["Nulo", "Básico", "Intermedio", "Avanzado", "Nativo"];
+  private know_level: String[] = ["Bajo", "Medio", "Alto"]
+  private experienceJobs: any[] = [];
+  private studies: any[] = [];
+  private languages: any[] = [];
+  private knowledges: any[] = [];
+
+  private sub1: Subscription;
+  private sub2: Subscription;
+
+  constructor(private fb: FormBuilder, private registerService: RegisterService, private router: Router) {}
 
   ngOnInit() {
     this.sub1 = this.registerService.getCountries().subscribe(
@@ -33,7 +44,7 @@ export class RegisterComponent implements OnInit {
       surname: [''],
       email: ['', Validators.required],
       birthday: ['', Validators.required],
-      gender: [false, Validators.required],
+      gender: ['', Validators.required],
       country: ['', Validators.required],
       cp: ['', Validators.required],
       place: ['', Validators.required],
@@ -58,7 +69,7 @@ export class RegisterComponent implements OnInit {
       languages_name: ['', Validators.required],
       languages_speaking: ['', Validators.required],
       languages_reading: ['', Validators.required],
-      languages_listening: ['', Validators.required]
+      languages_writing: ['', Validators.required]
     });
 
     this.fifthForm = this.fb.group({
@@ -67,8 +78,51 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  /*ngOnDestroy(): void {
+  addExperienceJob(formDirective: FormGroupDirective) {
+    this.experienceJobs.push(this.secondForm.value);
+    formDirective.resetForm();
+    this.secondForm.reset();
+  }
+
+  addStudy(formDirective: FormGroupDirective) {
+    this.studies.push(this.thirdForm.value);
+    formDirective.resetForm();
+    this.thirdForm.reset();
+  }
+
+  addLanguage(formDirective: FormGroupDirective) {
+    this.languages.push(this.forthForm.value);
+    formDirective.resetForm();
+    this.forthForm.reset();
+  }
+
+  addKnowledge(formDirective: FormGroupDirective) {
+    this.knowledges.push(this.fifthForm.value);
+    formDirective.resetForm();
+    this.fifthForm.reset();
+  }
+
+  saveCV() {
+    var cv = {
+      "personal_information": this.firstForm.value,
+      "experience": this.experienceJobs,
+      "studies": this.studies,
+      "languages": this.languages,
+      "knowledge": this.knowledges
+    };
+    console.info("CV", cv);
+    this.sub2 = this.registerService.saveCV(cv).subscribe(
+      res => {
+        this.successMessage = res;
+        this.router.navigate(['/']);
+      },
+      error => this.errorMessage = <any>error
+    );
+  }
+
+  ngOnDestroy(): void {
     if (this.sub1) this.sub1.unsubscribe();
-  }*/
+    if (this.sub2) this.sub2.unsubscribe();
+  }
 
 }

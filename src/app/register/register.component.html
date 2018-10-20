@@ -1,11 +1,9 @@
-<p>PUTA MIERDA</p>
-
 <mat-horizontal-stepper linear #stepper>
   <mat-step [stepControl]="firstForm">
     <form [formGroup]="firstForm" fxLayout="column">
       <ng-template matStepLabel>Información personal</ng-template>
       <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="name" placeholder="Nombre" required formControlName="surname">
+        <input matInput type="text" name="name" placeholder="Nombre" required formControlName="name">
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="surname" placeholder="Apellidos" formControlName="surname">
@@ -20,7 +18,6 @@
         <mat-radio-button value="male">Hombre</mat-radio-button>
         <mat-radio-button value="female" ngClass="female-radio-btn">Mujer</mat-radio-button>
       </mat-radio-group>
-
       <mat-form-field ngClass="form-control-container">
         <mat-select placeholder="Pais de residencia" formControlName="country">
           <mat-option *ngFor="let country of countries" [value]="country.name">
@@ -37,10 +34,13 @@
       <mat-form-field ngClass="form-control-container">
         <input matInput type="number" name="phone" placeholder="Teléfono" formControlName="phone">
       </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <button type="button" mat-flat-button color="primary" matStepperNext [disabled]="!firstForm.valid">Siguiente</button>
+      </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondForm">
-    <form [formGroup]="secondForm" fxLayout="column">
+  <mat-step>
+    <form [formGroup]="secondForm" #formDirective1="ngForm" (ngSubmit)="addExperienceJob(formDirective1)" fxLayout="column">
       <ng-template matStepLabel>Experiencia</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="experience_job" placeholder="Empresa" required formControlName="experience_job">
@@ -48,57 +48,136 @@
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="experience_role" placeholder="Puesto" required formControlName="experience_role">
       </mat-form-field>
-      <mat-form-field ngClass="form-control-container">
-        <input matInput type="date" name="experience_first_date" placeholder="Fecha de inicio" required formControlName="experience_first_date">
-      </mat-form-field>
-      <mat-form-field ngClass="form-control-container">
-        <input matInput type="date" name="experience_end_date" placeholder="Fecha de fin" required formControlName="experience_end_date">
-      </mat-form-field>
+      <div fxLayout="row">
+        <mat-form-field ngClass="form-control-container">
+          <input matInput type="date" name="experience_first_date" placeholder="Fecha de inicio" required formControlName="experience_first_date">
+        </mat-form-field>
+        <mat-form-field ngClass="form-control-container">
+          <input matInput type="date" name="experience_end_date" placeholder="Fecha de fin" required formControlName="experience_end_date">
+        </mat-form-field>
+      </div>
+      <button type="submit" mat-button [disabled]="!secondForm.valid">Guardar</button>
+      <div *ngIf="experienceJobs.length > 0">
+        <div *ngFor="let job of experienceJobs" fxLayout="column">
+          <div fxLayout="row" fxLayout="start center">
+            <h4>{{job.experience_job}}</h4>
+            <p ngClass="experience-role">({{job.experience_role}})</p>
+          </div>
+          <span ngClass="experience-dates">{{job.experience_first_date}} - {{job.experience_end_date}}</span>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <button mat-stroked-button color="primary" matStepperPrevious>Atrás</button>
+        <button type="button" mat-flat-button color="primary" matStepperNext>{{experienceJobs.length == 0 ? 'Saltar' : 'Siguiente'}}</button>
+      </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="thirdForm">
-    <form [formGroup]="thirdForm" fxLayout="column">
+  <mat-step>
+    <form [formGroup]="thirdForm" fxLayout="column" #formDirective2="ngForm" (ngSubmit)="addStudy(formDirective2)">
       <ng-template matStepLabel>Estudios</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="studies_title" placeholder="Título" required formControlName="studies_title">
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="studies_first_date" placeholder="Fecha de inicio" required formControlName="studies_first_date">
+        <input matInput type="text" name="studies_center" placeholder="Centro" formControlName="studies_center">
       </mat-form-field>
-      <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="studies_end_date" placeholder="Fecha de fin" required formControlName="studies_end_date">
-      </mat-form-field>
-      <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="studies_center" placeholder="Centro" required formControlName="studies_center">
-      </mat-form-field>
+      <div fxLayout="row">
+        <mat-form-field ngClass="form-control-container">
+          <input matInput type="date" name="studies_first_date" placeholder="Fecha de inicio" required formControlName="studies_first_date">
+        </mat-form-field>
+        <mat-form-field ngClass="form-control-container">
+          <input matInput type="date" name="studies_end_date" placeholder="Fecha de fin" required formControlName="studies_end_date">
+        </mat-form-field>
+      </div>
+      <button type="submit" mat-button [disabled]="!thirdForm.valid">Guardar</button>
+      <div *ngIf="studies.length > 0">
+        <div *ngFor="let study of studies" fxLayout="column">
+          <div fxLayout="row" fxLayout="start center">
+            <h4>{{study.studies_title}}</h4>
+            <p *ngIf="study.studies_center" ngClass="experience-role">({{study.studies_center}})</p>
+          </div>
+          <span ngClass="experience-dates">{{study.studies_first_date}} - {{study.studies_end_date}}</span>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <button mat-stroked-button color="primary" matStepperPrevious>Atrás</button>
+        <button type="button" mat-flat-button color="primary" matStepperNext>{{studies.length == 0 ? 'Saltar' : 'Siguiente'}}</button>
+      </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="forthForm">
-    <form [formGroup]="forthForm" fxLayout="column">
+  <mat-step>
+    <form [formGroup]="forthForm" fxLayout="column" #formDirective3="ngForm" (ngSubmit)="addLanguage(formDirective3)">
       <ng-template matStepLabel>Idiomas</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="languages_name" placeholder="Lenguaje" required formControlName="languages_name">
       </mat-form-field>
-      <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="languages_speaking" placeholder="Hablado" required formControlName="languages_speaking">
-      </mat-form-field>
-      <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="languages_reading" placeholder="Escrito" required formControlName="languages_reading">
-      </mat-form-field>
-      <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="languages_listening" placeholder="Leído" required formControlName="languages_listening">
-      </mat-form-field>
+      <div fxLayout="row">
+        <mat-form-field ngClass="form-control-container">
+          <mat-select placeholder="Hablado" formControlName="languages_speaking">
+            <mat-option *ngFor="let option of levels" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field ngClass="form-control-container">
+          <mat-select placeholder="Leido" formControlName="languages_reading">
+            <mat-option *ngFor="let option of levels" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field ngClass="form-control-container">
+          <mat-select placeholder="Escrito" formControlName="languages_writing">
+            <mat-option *ngFor="let option of levels" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <button type="submit" mat-button [disabled]="!forthForm.valid">Guardar</button>
+      <div *ngIf="languages.length > 0">
+        <div *ngFor="let lang of languages" fxLayout="column">
+          <div fxLayout="row" fxLayout="start center">
+            <h4>{{lang.languages_name}}</h4>
+          </div>
+          <div fxLayout="row">
+            <span>Hablado - {{lang.languages_speaking}}</span>
+            <span>Leido - {{lang.languages_reading}}</span>
+            <span>Escrito - {{lang.languages_writing}}</span>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <button mat-stroked-button color="primary" matStepperPrevious>Atrás</button>
+        <button type="button" mat-flat-button color="primary" matStepperNext>{{languages.length == 0 ? 'Saltar' : 'Siguiente'}}</button>
+      </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="fifthForm">
-    <form [formGroup]="fifthForm" fxLayout="column">
+  <mat-step>
+    <form [formGroup]="fifthForm" fxLayout="column" #formDirective4="ngForm" (ngSubmit)="addKnowledge(formDirective4)">
       <ng-template matStepLabel>Conocimientos</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="knwoledge_name" placeholder="Conocimiento" required formControlName="knwoledge_name">
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="knowledge_level" placeholder="Nivel" required formControlName="knowledge_level">
+        <mat-select placeholder="Nivel" formControlName="knowledge_level">
+          <mat-option *ngFor="let option of know_level" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
+      <button type="submit" mat-button [disabled]="!fifthForm.valid">Guardar</button>
+      <div *ngIf="knowledges.length > 0">
+        <div *ngFor="let know of knowledges" fxLayout="column">
+          <div fxLayout="row" fxLayout="space-between center">
+            <h4>{{know.knwoledge_name}}</h4>
+            <p>{{know.knowledge_level}}</p>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <button type="button" mat-flat-button color="primary" matStepperNext (click)="saveCV()">Finalizar</button>
+      </div>
     </form>
   </mat-step>
 </mat-horizontal-stepper>
