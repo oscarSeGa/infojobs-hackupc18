@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 import { RegisterService } from './register.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
-=======
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { HttpClient, HttpResponse, HttpHeaders, HttpParams, HttpErrorResponse } from '@angular/common/http';
->>>>>>> 18202ac2f7c7cf501c690fbba98ca82529110b73
 
 @Component({
   selector: 'app-register',
