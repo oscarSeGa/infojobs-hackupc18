@@ -3,29 +3,36 @@
   <div fxShow fxHide.gt-xs ngClass="swipe-container" fxLayout="row" fxLayoutAlign="space-between center">
     <div>
       <mat-icon>arrow_back</mat-icon>
-      <span>Descartar</span>
     </div>
     <div>
-      <mat-icon>touch_app</mat-icon>46
+      <mat-icon>touch_app</mat-icon>
     </div>
     <div>
-      <span>Aplicar</span>
       <mat-icon>arrow_forward</mat-icon>
     </div>
   </div>
   <!-- WARNING: offer card -->
-  <div ngClass="offer-card-resp" ngClass.gt-xs="offer-card" class="example-ripple-container mat-elevation-z4" matRipple
-     fxLayout="column" fxLayout.gt-xs="row wrap" fxLayoutAlign="space-between stretch">
-     <div ngClass="match-container" fxLayout="column" fxLayoutAlign="center center">
-       <span ngClass="match-num">100%</span>
-       <span ngClass="match-lbl">match!</span>
-     </div>
-    <div ngClass="offer-title"  fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.gt-xs="center start">
-      <span ngClass="offer-title-txt">The job of your dreams</span>
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <span ngClass="offer-info-txt">Barcelona</span>
-        <div ngClass="vertical-separator"></div>
-        <span ngClass="offer-info-txt">99 interesados</span>
+  <div
+    cdkDropList
+    #offers_list="cdkDropList"
+    [cdkDropListData]="offers"
+    [cdkDropListConnectedTo]="[descarted_list]"
+    (cdkDropListDropped)="drop($event)">
+
+    <div *ngFor="let offer of offers" ngClass="offer-card-res example-ripple-container mat-elevation-z4" ngClass.gt-xs="offer-card example-ripple-container mat-elevation-z4" matRipple
+     fxLayout="column" fxLayout.gt-xs="row wrap" fxLayoutAlign="space-between stretch" cdkDrag cdkDragLockAxis="x">
+     <div fxLayout="row" fxLayoutAlign="start center">
+       <div ngClass="match-container" fxLayout="column" fxLayoutAlign="center center">
+         <span ngClass="match-num">100%</span>
+         <span ngClass="match-lbl">match!</span>
+       </div>
+      <div ngClass="offer-title"  fxLayout="column" fxLayoutAlign="center start">
+        <span ngClass="offer-title-txt">The job of your dreams</span>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <span ngClass="offer-info-txt">Barcelona</span>
+          <div ngClass="vertical-separator"></div>
+          <span ngClass="offer-info-txt">99 interesados</span>
+        </div>
       </div>
     </div>
     <div ngClass="chips-container" fxLayout="row wrap" fxLayoutAlign="center center">
@@ -39,6 +46,44 @@
         <mat-chip color="primary" selected>Jornada Completa</mat-chip>
       </mat-chip-list>
     </div>
+    <div ngClass="description-container">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div fxHide fxShow.gt-xs ngClass="actions-container" fxLayout="row" fxLayoutAlign="center center">
+      <button mat-icon-button color="primary" matTooltip="Ver más" matTooltipPosition="before">
+        <mat-icon aria-label="Example icon-button with a heart icon">share</mat-icon>
+      </button>
+      <button mat-icon-button color="primary" matTooltip="Ver más" matTooltipPosition="before">
+        <mat-icon aria-label="Example icon-button with a heart icon">info</mat-icon>
+      </button>
+      <button mat-icon-button color="accent" matTooltip="Aplicar" matTooltipPosition="before">
+        <mat-icon aria-label="Example icon-button with a heart icon">assignment_turned_in</mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Descartar" matTooltipPosition="before">
+        <mat-icon aria-label="Example icon-button with a heart icon">cancel</mat-icon>
+      </button>
+    </div>
+    <div fxHide.gt-xs fxShow ngClass="drag-ic-container" fxLayout="row" fxLayoutAlign="start center">
+      <button mat-icon-button matTooltipPosition="before">
+        <mat-icon aria-label="Example icon-button with a heart icon">drag_indicator</mat-icon>
+      </button>
+    </div>
+  </div>
+  </div>
+
+  <div class="swiped-cards-container" fxLayout="row">
+    <div ngClass="descarted-container"
+    cdkDropList
+    #descarted_list="cdkDropList"
+    [cdkDropListData]="descarted"
+    [cdkDropListConnectedTo]="[offers_list]"
+    (cdkDropListDropped)="drop($event)"></div>
+    <div ngClass="apply-container"
+    cdkDropList
+    #apply_list="cdkDropList"
+    [cdkDropListData]="descarted"
+    [cdkDropListConnectedTo]="[offers_list]"
+    (cdkDropListDropped)="drop($event)"></div>
   </div>
 
 </div>

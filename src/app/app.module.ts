@@ -12,6 +12,8 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { ErrorComponent } from './error/error.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MatRippleModule } from '@angular/material/core';
     FormsModule,
     ReactiveFormsModule,
     MatChipsModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTooltipModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

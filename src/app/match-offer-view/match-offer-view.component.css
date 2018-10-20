@@ -3,36 +3,33 @@
   background-color: #eee;
   cursor: pointer;
   min-height: 50px;
-  position: relative;
+  width: 100%;
   max-width: 700px;
 }
-.offer-card-resp{
+.offer-card-res{
   margin: 0 10px 5px 10px;
-  padding: 20px 0 10px 0;
   background-color: #eee;
   cursor: pointer;
   min-height: 50px;
-  position: relative;
+  width: 100%;
+  max-width: 700px;
 }
 .match-container{
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: #29a53d;
+  border-radius: 2px;
   color: #eee;
   padding: 1px 5px;
-  margin: 0 10px;
-  width: 35px;
+  margin: 10px;
+  width: 40px;
   height: 40px;
 }
 .offer-title{
-  margin: 0 55px;
 }
 .offer-title-txt{
   font-weight: bold;
 }
 .match-container .match-num{
-  font-size: 9px;
+  font-size: 10px;
   font-weight: bold;
 }
 .match-container .match-lbl{
@@ -50,7 +47,12 @@
 }
 /*chips */
 .chips-container{
-  padding-top: 6px;
+  padding: 6px 10px 0px 10px;
+  max-width: 350px;
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
 }
 .mat-chip-list{
   margin: 0px 3px 6px 3px;
@@ -59,4 +61,64 @@
   font-size: 9px;
   min-height: 0px;
   padding: 9px;
+}
+.offer-card:hover .chips-container{
+  opacity: 0;
+}
+/* description */
+.description-container{
+  max-width: 100%;
+  padding: 0 12px;
+}
+.description-container p {
+  font-size: 10px;
+  margin-top: 0px;
+}
+/*  actions container */
+.actions-container{
+  position: absolute;
+  top: 0;
+  right: -100%;
+  margin: 10px;
+  height: 40px;
+  transition: right .5s ease-in-out;
+  -moz-transition: right .5s ease-in-out;
+  -webkit-transition: right .5s ease-in-out;
+}
+.offer-card:hover .actions-container{
+  right: 0;
+}
+.drag-ic-container{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  height: 40px;
+}
+/*  swipe container */
+.swipe-container{
+  width: 100%;
+  padding-bottom: 15px;
+}
+.swiped-cards-container{
+  background: green;
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+}
+.descarted-container{
+  background: red;
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 50vw;
+}
+
+.apply-container{
+  background: blue;
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 50vw;
 }
