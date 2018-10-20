@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-match-offer-view',
@@ -17,23 +18,28 @@ export class MatchOfferViewComponent implements OnInit {
   descarted = [];
   apply = [];
 
-  constructor() { }
+  constructor(public snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    console.log(event.container.id);
     if (event.previousContainer === event.container) {
-      console.log("Entro al TRUE");
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      if(event.container.id === "apply_list") {console.log(event.container.data, event.currentIndex);} //array i index del item per cridar al apply
+      if(event.container.id === "apply_list") {
+        this.openSnackBar("Has aplicado a:"+ "JobOffer", "Ok");
+      } //array i index del item per cridar al apply
+      else {
+        this.openSnackBar("Has descartado la oferta:"+ "JobOffer", "Ok");
+      }
       transferArrayItem(event.previousContainer.data,
-                        event.container.data,
-                        event.previousIndex,
-                        event.currentIndex);
-
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
     }
+  }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action);
   }
 }
