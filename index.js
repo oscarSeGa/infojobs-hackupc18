@@ -45,5 +45,5 @@ const server = http.createServer(app);
 //server.listen(port, () => console.log(`API running on localhost:${port}`));
 
 server.listen(process.env.PORT || 8000, "0.0.0.0", function() {
-    console.log("App is running on port " + process.env.PORT || 8000);
+    console.log("App is running on port " + (process.env.PORT || 8000));
 });

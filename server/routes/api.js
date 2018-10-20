@@ -7,8 +7,7 @@ router.get('/', (req, res) => {
   res.send('api works');
 });
 
-router.get('/auth/infojobs',
-  passport.authenticate('oauth2'));
+router.get('/auth/infojobs', passport.authenticate('oauth2'));
 
 router.get('/auth/infojobs/callback',
   passport.authenticate('oauth2', { failureRedirect: '/' }),
