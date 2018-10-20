@@ -13,6 +13,8 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { ErrorComponent } from './error/error.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
@@ -46,7 +48,9 @@ import { RegisterComponent } from './register/register.component';
     MatSelectModule,
     HttpClientModule,
     MatChipsModule,
-    MatRippleModule
+    MatRippleModule,
+    MatTooltipModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
