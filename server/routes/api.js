@@ -6,6 +6,14 @@ router.get('/', (req, res) => {
   res.send('api works');
 });
 
+  router.route('/recomendations')
+  .get(function (req, res) {
+
+    var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, './odertas.json'), 'utf8'));
+    
+    return res.status(200).json(ofertas)
+  });
+
 router.route('/test')
   .get(function (req, res) {
     //Success
