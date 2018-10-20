@@ -12,11 +12,11 @@
     </div>
   </div>
   <!-- WARNING: offer card -->
-  <div
+  <div ngClass="offers-list-container"
     cdkDropList
     #offers_list="cdkDropList"
     [cdkDropListData]="offers"
-    [cdkDropListConnectedTo]="[descarted_list]"
+    [cdkDropListConnectedTo]="[descarted_list, apply_list]"
     (cdkDropListDropped)="drop($event)">
 
     <div *ngFor="let offer of offers" ngClass="offer-card-res example-ripple-container mat-elevation-z4" ngClass.gt-xs="offer-card example-ripple-container mat-elevation-z4" matRipple
@@ -72,16 +72,16 @@
   </div>
 
   <div class="swiped-cards-container" fxLayout="row">
-    <div ngClass="descarted-container"
+    <div ngClass="descarted-container" id="descarted_list"
     cdkDropList
     #descarted_list="cdkDropList"
     [cdkDropListData]="descarted"
     [cdkDropListConnectedTo]="[offers_list]"
     (cdkDropListDropped)="drop($event)"></div>
-    <div ngClass="apply-container"
+    <div ngClass="apply-container" id="apply_list"
     cdkDropList
     #apply_list="cdkDropList"
-    [cdkDropListData]="descarted"
+    [cdkDropListData]="apply"
     [cdkDropListConnectedTo]="[offers_list]"
     (cdkDropListDropped)="drop($event)"></div>
   </div>
