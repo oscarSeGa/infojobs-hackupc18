@@ -9,10 +9,13 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 export class MatchOfferViewComponent implements OnInit {
 
   offers = [
+    {'title': "El trabajo de tu vida joputa"},
+    {'title': "El trabajo de tu vida joputa"},
     {'title': "El trabajo de tu vida joputa"}
   ];
 
   descarted = [];
+  apply = [];
 
   constructor() { }
 
@@ -20,15 +23,17 @@ export class MatchOfferViewComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
+    console.log(event.container.id);
     if (event.previousContainer === event.container) {
       console.log("Entro al TRUE");
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      console.log("Entro al ESLE");
+      if(event.container.id === "apply_list") {console.log(event.container.data, event.currentIndex);} //array i index del item per cridar al apply
       transferArrayItem(event.previousContainer.data,
                         event.container.data,
                         event.previousIndex,
                         event.currentIndex);
+
     }
   }
 }
