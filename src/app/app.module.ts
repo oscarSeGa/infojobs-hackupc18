@@ -12,14 +12,20 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { ErrorComponent } from './error/error.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
 import { CvComponent } from './cv/cv.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MatchOfferViewComponent,
     ErrorComponent,
-    CvComponent
+    CvComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +35,12 @@ import { CvComponent } from './cv/cv.component';
     MatIconModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatInputModule,
     MatChipsModule,
     MatRippleModule
   ],
