@@ -9,8 +9,8 @@ router.get('/', (req, res) => {
 
 router.get('/auth/infojobs', passport.authenticate('oauth2'));
 
-router.get('/auth/infojobs/callback', passport.authenticate('oauth2'), (req, res) => {
-  console.info("RETURN STATE");
+router.get('/auth/infojobs/callback', (req, res) => {
+  res.redirect('/error');
 });
 
 router.route('/test')
