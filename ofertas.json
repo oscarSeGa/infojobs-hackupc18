@@ -1,0 +1,140 @@
+{
+    "currentPage": 1,
+    "pageSize": 2,
+    "totalResults": 2,
+    "currentResults": 1,
+    "totalPages": 1,
+    "dataLayer": {
+       "es-sch-region_level2_id": "0"
+    },
+    "offers": [
+       {
+          "id": "998fd1bf1548ba89daff1bd85b2031",
+          "title": "desarrollador web javascript",
+          "province": {
+             "id": 33,
+             "value": "Madrid"
+          },
+          "city": "Getafe",
+          "link": "https://www.infojobs.net/getafe/tecnico-reparacion-portatil/of-i998fd1bf1548ba89daff1bd85b2031",
+          "keywords": ["javascript", "developer", "junior", "web"],
+          "category": {
+             "id": 80,
+             "value": "Ingenieros y técnicos"
+          },
+          "contractType": {
+             "id": 8,
+             "value": "De duración determinada"
+          },
+          "subcategory": {
+             "id": 3046,
+             "value": "Electrónica"
+          },
+          "salaryMin": {
+             "id": 0,
+             "value": ""
+          },
+          "salaryMax": {
+             "id": 0,
+             "value": ""
+          },
+          "salaryPeriod": {
+             "id": 0,
+             "value": ""
+          },
+          "experienceMin": {
+             "id": 2,
+             "value": "Al menos 1 año"
+          },
+          "workDay": {
+             "id": 1,
+             "value": "Completa"
+          },
+          "study": {
+             "id": 30,
+             "value": "Formación Profesional Grado Medio"
+          },
+          "published": "2018-10-20T14:04:08.000Z",
+          "updated": "2018-10-20T14:04:08.000Z",
+          "author": {
+             "id": "87376e055e473495ade1a05d7877df",
+             "name": "Flexiplan",
+             "uri": "http://www.infojobs.net//grupo-eulen.trabajo.infojobs.net",
+             "logoUrl": "http://www.infojobs.net/logo/logo/do-get.xhtml?id=14030012544",
+             "corporateResponsive": true,
+             "showCorporativeHeader": true
+          },
+          "requirementMin": "",
+          "bold": false,
+          "urgent": false,
+          "color": false,
+          "applications": "0",
+          "subSegment": 23,
+          "executive": false
+       }, 
+       {
+          "id": "998fd1bf1548ba89daff1bd85b2031",
+          "title": "Técnico Reparación Portátil",
+          "province": {
+             "id": 33,
+             "value": "Madrid"
+          },
+          "city": "Getafe",
+          "link": "https://www.infojobs.net/getafe/tecnico-reparacion-portatil/of-i998fd1bf1548ba89daff1bd85b2031",
+          "keywords": ["hardware", "portatiles", "junior", "tecnico", "fp"],
+          "category": {
+             "id": 80,
+             "value": "Ingenieros y técnicos"
+          },
+          "contractType": {
+             "id": 8,
+             "value": "De duración determinada"
+          },
+          "subcategory": {
+             "id": 3046,
+             "value": "Electrónica"
+          },
+          "salaryMin": {
+             "id": 0,
+             "value": ""
+          },
+          "salaryMax": {
+             "id": 0,
+             "value": ""
+          },
+          "salaryPeriod": {
+             "id": 0,
+             "value": ""
+          },
+          "experienceMin": {
+             "id": 2,
+             "value": "Al menos 1 año"
+          },
+          "workDay": {
+             "id": 1,
+             "value": "Completa"
+          },
+          "study": {
+             "id": 30,
+             "value": "Formación Profesional Grado Medio"
+          },
+          "published": "2018-10-20T14:04:08.000Z",
+          "updated": "2018-10-20T14:04:08.000Z",
+          "author": {
+             "id": "87376e055e473495ade1a05d7877df",
+             "name": "Flexiplan",
+             "uri": "http://www.infojobs.net//grupo-eulen.trabajo.infojobs.net",
+             "logoUrl": "http://www.infojobs.net/logo/logo/do-get.xhtml?id=14030012544",
+             "corporateResponsive": true,
+             "showCorporativeHeader": true
+          },
+          "requirementMin": "",
+          "bold": false,
+          "urgent": false,
+          "color": false,
+          "applications": "0",
+          "subSegment": 23,
+          "executive": false
+       }
+    ]
+ }
