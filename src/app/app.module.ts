@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatchOfferViewComponent } from './match-offer-view/match-offer-view.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatRippleModule} from '@angular/material/core';
