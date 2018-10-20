@@ -20,7 +20,16 @@ router.get('/', (req, res) => {
 
   router.route('/cv')
   .post(function (req, res) {
-    console.log(req.body);
+
+    fs.writeFile(path.resolve(__dirname, '../../src/assets/user.json'), JSON.stringify(req.body), 'utf8', function(err) {
+      if (err) return res.status(400).json("Error al guardar el CV");
+      return res.status(200).json("CV guardado correctamente");
+    });
+
+  })
+
+  router.route('/cv')
+  .put(function (req, res) {
 
     fs.writeFile(path.resolve(__dirname, '../../src/assets/user.json'), JSON.stringify(req.body), 'utf8', function(err) {
       if (err) return res.status(400).json("Error al guardar el CV");
