@@ -1,11 +1,9 @@
 import { throwError as observableThrowError, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse, HttpHeaders, HttpParams, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RegisterService {
 
   private countriesUrl = 'api/countries';
@@ -13,9 +11,9 @@ export class RegisterService {
   constructor(private http: HttpClient) { }
 
   getCountries(): Observable<any> {
-
+    console.info("SERVICE");
     return this.http.get(this.countriesUrl).pipe(
       map((res: HttpResponse<any>) => res),
-      catchError((error: HttpErrorResponse) => observableThrowError(error || 'Server error')),);
+      catchError((error: HttpErrorResponse) => observableThrowError(error || 'Server error')));
   }
 }

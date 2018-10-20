@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { CvComponent } from './cv/cv.component';
 import { RegisterComponent } from './register/register.component';
 
@@ -41,6 +43,8 @@ import { RegisterComponent } from './register/register.component';
     MatFormFieldModule,
     MatRadioModule,
     MatInputModule,
+    MatSelectModule,
+    HttpClientModule,
     MatChipsModule,
     MatRippleModule
   ],

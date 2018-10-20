@@ -29,7 +29,6 @@ export class RegisterComponent implements OnInit {
     );
 
     this.firstForm = this.fb.group({
-      //username: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(20)])],
       name: ['', Validators.required],
       surname: [''],
       email: ['', Validators.required],
@@ -68,8 +67,8 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  ngOnDestroy(): void {
+  /*ngOnDestroy(): void {
     if (this.sub1) this.sub1.unsubscribe();
-  }
+  }*/
 
 }

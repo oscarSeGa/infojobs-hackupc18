@@ -15,17 +15,17 @@ router.get('/', (req, res) => {
 
     var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
     ofertas.offers.map(function(oferta) {
-      
+
       });
-    
+
     return res.status(200).json(ofertas)
   });
 
   router.route('/countries')
   .get(function (req, res) {
     var countries = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/countries.json'), 'utf8'));
-    
-    return res.status(200).json(countries)
+
+    return res.status(200).json(countries);
   });
 
 router.route('/test')

@@ -1,3 +1,4 @@
+<p>PUTA MIERDA</p>
 
 <mat-horizontal-stepper linear #stepper>
   <mat-step [stepControl]="firstForm">
@@ -5,7 +6,6 @@
       <ng-template matStepLabel>Información personal</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="name" placeholder="Nombre" required formControlName="surname">
-        <!--<mat-error *ngIf="complexForm.controls['email'].hasError('emailTaken')">- Este correo electrónico ya esta en uso.</mat-error>-->
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="surname" placeholder="Apellidos" formControlName="surname">
@@ -20,8 +20,13 @@
         <mat-radio-button value="male">Hombre</mat-radio-button>
         <mat-radio-button value="female" ngClass="female-radio-btn">Mujer</mat-radio-button>
       </mat-radio-group>
+
       <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="country" placeholder="Pais de residencia" required formControlName="country">
+        <mat-select placeholder="Pais de residencia" formControlName="country">
+          <mat-option *ngFor="let country of countries" [value]="country.name">
+            {{country.name}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="cp" placeholder="Código postal" required formControlName="cp">
