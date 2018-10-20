@@ -9,6 +9,10 @@ const api = require('./server/routes/api');
 
 const app = express();
 
+//Oauth2
+var passport = require('passport');
+require('./server/passport')(passport); //pass passport for configuration
+
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
