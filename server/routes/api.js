@@ -21,23 +21,18 @@ router.get('/', (req, res) => {
   router.route('/cv')
   .post(function (req, res) {
     console.log(req.body);
-    var newuser  = myParser.json(req.body)
 
-    //var newUser  = JSON.parse(req.body)
-    console.log(newuser);
+    fs.writeFile(path.resolve(__dirname, '../../src/assets/user.json'), JSON.stringify(req.body), 'utf8', function(err) {
+      if (err) return res.status(400).json("Error al guardar el CV");
+      return res.status(200).json("CV guardado correctamente");
+    });
 
-
-    fs.writeFileSync(path.resolve(__dirname,'../../src/assets/user.json'),'utf8');
-    return res.status(200).json(newuser);
   })
-
 
   router.route('/countries')
   .get(function (req, res) {
     var countries = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/countries.json'), 'utf8'));
-
     return res.status(200).json(countries);
-
   });
 
 router.route('/test')
