@@ -14,12 +14,20 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { CvComponent } from './cv/cv.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MatchOfferViewComponent,
-    ErrorComponent
+    ErrorComponent,
+    CvComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +37,12 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatIconModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatStepperModule,
     FormsModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    MatInputModule,
     MatChipsModule,
     MatRippleModule,
     MatTooltipModule,

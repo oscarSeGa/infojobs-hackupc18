@@ -1,0 +1,99 @@
+
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstForm">
+    <form [formGroup]="firstForm" fxLayout="column">
+      <ng-template matStepLabel>Información personal</ng-template>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="name" placeholder="Nombre" required formControlName="surname">
+        <!--<mat-error *ngIf="complexForm.controls['email'].hasError('emailTaken')">- Este correo electrónico ya esta en uso.</mat-error>-->
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="surname" placeholder="Apellidos" formControlName="surname">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="email" name="email" placeholder="Correo electrónico" required formControlName="email">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="date" name="birthday" placeholder="Fecha de nacimiento" required formControlName="birthday">
+      </mat-form-field>
+      <mat-radio-group formControlName="gender">
+        <mat-radio-button value="male">Hombre</mat-radio-button>
+        <mat-radio-button value="female" ngClass="female-radio-btn">Mujer</mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="country" placeholder="Pais de residencia" required formControlName="country">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="cp" placeholder="Código postal" required formControlName="cp">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="place" placeholder="Población" required formControlName="place">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="number" name="phone" placeholder="Teléfono" formControlName="phone">
+      </mat-form-field>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondForm">
+    <form [formGroup]="secondForm" fxLayout="column">
+      <ng-template matStepLabel>Experiencia</ng-template>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="experience_job" placeholder="Empresa" required formControlName="experience_job">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="experience_role" placeholder="Puesto" required formControlName="experience_role">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="date" name="experience_first_date" placeholder="Fecha de inicio" required formControlName="experience_first_date">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="date" name="experience_end_date" placeholder="Fecha de fin" required formControlName="experience_end_date">
+      </mat-form-field>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdForm">
+    <form [formGroup]="thirdForm" fxLayout="column">
+      <ng-template matStepLabel>Estudios</ng-template>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="studies_title" placeholder="Título" required formControlName="studies_title">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="studies_first_date" placeholder="Fecha de inicio" required formControlName="studies_first_date">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="studies_end_date" placeholder="Fecha de fin" required formControlName="studies_end_date">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="studies_center" placeholder="Centro" required formControlName="studies_center">
+      </mat-form-field>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="forthForm">
+    <form [formGroup]="forthForm" fxLayout="column">
+      <ng-template matStepLabel>Idiomas</ng-template>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="languages_name" placeholder="Lenguaje" required formControlName="languages_name">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="languages_speaking" placeholder="Hablado" required formControlName="languages_speaking">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="languages_reading" placeholder="Escrito" required formControlName="languages_reading">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="languages_listening" placeholder="Leído" required formControlName="languages_listening">
+      </mat-form-field>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="fifthForm">
+    <form [formGroup]="fifthForm" fxLayout="column">
+      <ng-template matStepLabel>Conocimientos</ng-template>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="knwoledge_name" placeholder="Conocimiento" required formControlName="knwoledge_name">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="knowledge_level" placeholder="Nivel" required formControlName="knowledge_level">
+      </mat-form-field>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
