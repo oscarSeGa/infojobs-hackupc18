@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 router.get('/auth/infojobs', passport.authenticate('oauth2'));
 
 router.get('/auth/infojobs/callback', (req, res) => {
-  res.redirect('/error');
+  res.redirect('https://infojobshackupc2018.herokuapp.com/error');
 });
 
 router.route('/test')
