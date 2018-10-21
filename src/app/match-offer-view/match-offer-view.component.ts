@@ -31,7 +31,7 @@ export class MatchOfferViewComponent implements OnInit {
     );
   }
 
-  drop(event: CdkDragDrop<string[]>, i: number) {
+  drop(event: CdkDragDrop<string[]>) {
 
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -43,11 +43,8 @@ export class MatchOfferViewComponent implements OnInit {
       else {
         this.openSnackBar("Descartado:"+ item.title, "Ok");
       }
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-      this.apiDrop(i);
+      this.apiDrop(event.currentIndex);
+      transferArrayItem(event.previousContainer.data, event.container.data,event.previousIndex,event.currentIndex);
     }
   }
 
