@@ -456,6 +456,77 @@
         "applications":"0",
         "subSegment":23,
         "executive":false
+     },
+     {
+        "id":"cfad375eb34894b5d2f7f3fd752bdf",
+        "visible":true,
+        "title":"750€ FIJO + COMISIONES/PROMOTOR ONG MEDIA JORNADA",
+        "province":{
+           "id":49,
+           "value":"Valencia"
+        },
+        "city":"Valencia",
+        "languages":[
+            "esp"
+         ],
+        "link":"https://www.infojobs.net/valencia/750-fijo-comisiones-promotor-ong-media-jornada/of-icfad375eb34894b5d2f7f3fd752bdf",
+        "keywords":[
+            "paleta",
+            "obra",
+            "media jornada"
+         ],
+        "category":{
+           "id":190,
+           "value":"Comercial y ventas"
+        },
+        "contractType":{
+           "id":1,
+           "value":"Indefinido"
+        },
+        "subcategory":{
+           "id":3119,
+           "value":"Comercial"
+        },
+        "salaryMin":{
+           "id":140,
+           "value":"900 €"
+        },
+        "salaryMax":{
+           "id":200,
+           "value":"2.700 €"
+        },
+        "salaryPeriod":{
+           "id":2,
+           "value":"Bruto/mes"
+        },
+        "experienceMin":{
+           "id":1,
+           "value":"No Requerida"
+        },
+        "workDay":{
+           "id":5,
+           "value":"Parcial - Indiferente"
+        },
+        "study":{
+           "id":10,
+           "value":"Sin estudios"
+        },
+        "published":"2018-10-21T05:25:29.000Z",
+        "updated":"2018-10-21T05:25:29.000Z",
+        "author":{
+           "id":"b7610b175046209b59df3b555d85e7",
+           "name":"DLAN MARKETING",
+           "uri":"http://www.infojobs.net//api.infojobs.net/dlan-marketing/em-ib7610b175046209b59df3b555d85e7",
+           "corporateResponsive":false,
+           "showCorporativeHeader":false
+        },
+        "requirementMin":"",
+        "bold":false,
+        "urgent":false,
+        "color":false,
+        "applications":"0",
+        "subSegment":11,
+        "executive":false
      }
     ]
  }
