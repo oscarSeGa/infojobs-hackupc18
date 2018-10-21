@@ -27,6 +27,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { MatTableModule } from '@angular/material/table';
     MatSnackBarModule,
     MatAutocompleteModule,
     MatTableModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

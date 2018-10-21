@@ -3,7 +3,9 @@ import { catchError, map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class CvService {
 
   private cvUrl = 'api/cv';
