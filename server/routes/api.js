@@ -48,7 +48,7 @@ router.get('/', (req, res) => {
       return;
     });
     ofertas.offers.sort(function(a, b) {
-      return a.rating - b.rating
+      return b.rating - a.rating
     })
     return res.status(200).json(ofertas)
   });
