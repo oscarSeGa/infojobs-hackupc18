@@ -1,0 +1,15 @@
+.personal {
+  background-color: #ffffff;
+}
+.personal div {
+  min-width: 200px;
+  margin: 10px 0px;
+}
+h4 {
+  margin: 0 !important;
+}
+.exp-st {
+  width: 45%;
+  margin: 0px 2.5%;
+  background-color: white;
+}

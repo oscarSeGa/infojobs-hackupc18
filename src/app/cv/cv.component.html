@@ -1,45 +1,95 @@
 <mat-tab-group>
   <mat-tab label="Información personal">
-    <div fxLayout="row">
-      <!-- "name":"Óscar","surname":"Serrano","email":"oscar.serrano7@gmail.com","birthday":"2018-10-01","gender":"male","country":"Spain","cp":"05562","place":"Barcelona","phone":"123456789" -->
-      <div fxLayout="column">
-        <h6>Nombre</h6>
+    <div ngClass="personal" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h4>Nombre</h4>
         <span>{{cv.personal_information.name}}</span>
       </div>
-      <div fxLayout="column">
-        <h6>Apellidos</h6>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h4>Apellidos</h4>
         <span>{{cv.personal_information.surname}}</span>
       </div>
-      <div fxLayout="column">
-        <h6>Correo electrónico</h6>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h4>Correo electrónico</h4>
         <span>{{cv.personal_information.email}}</span>
       </div>
-      <div fxLayout="column">
-        <h6>Dia de nacimiento</h6>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h4>Dia de nacimiento</h4>
         <span>{{cv.personal_information.birthday}}</span>
       </div>
-      <div fxLayout="column" *ngIf="cv.personal_information.gender">
-        <h6>Genero</h6>
+      <div fxLayout="column" fxLayoutAlign="center center" *ngIf="cv.personal_information.gender">
+        <h4>Genero</h4>
         <span>{{cv.personal_information.gender}}</span>
       </div>
-      <div fxLayout="column">
-        <h6>País</h6>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h4>País</h4>
         <span>{{cv.personal_information.country}}</span>
       </div>
-      <div fxLayout="column">
-        <h6>Codigo postal</h6>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h4>Codigo postal</h4>
         <span>{{cv.personal_information.cp}}</span>
       </div>
-      <div fxLayout="column">
-        <h6>Ciudad/Provincia</h6>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h4>Ciudad/Provincia</h4>
         <span>{{cv.personal_information.place}}</span>
       </div>
-      <div fxLayout="column">
-        <h6>Telefono</h6>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <h4>Telefono</h4>
         <span>{{cv.personal_information.phone}}</span>
       </div>
     </div>
   </mat-tab>
-  <mat-tab label="Second"> Content 2 </mat-tab>
-  <mat-tab label="Third"> Content 3 </mat-tab>
+  <mat-tab label="Experiencia y estudios">
+    <div fxLayout="row">
+      <div ngClass="exp-st" fxLayout="column">
+        <div *ngFor="let exp of cv.experience" fxLayout="column">
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <span>{{exp.experience_job}}</span>
+            <span>{{exp.experience_first_date}} - {{exp.experience_end_date}}</span>
+          </div>
+          <span>{{exp.experience_role}}</span>
+        </div>
+      </div>
+      <div ngClass="exp-st" fxLayout="column">
+        <div *ngFor="let st of cv.studies">
+          <span>{{st.title}}</span>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Idiomas y conocimientos">
+    <div fxLayout="row">
+      <div ngClass="lang-know" fxLayout="column">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="languages_name">
+            <th mat-header-cell *matHeaderCellDef> Idioma </th>
+            <td mat-cell *matCellDef="let element"> {{element.languages_name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="languages_reading">
+            <th mat-header-cell *matHeaderCellDef> Leido </th>
+            <td mat-cell *matCellDef="let element"> {{element.languages_reading}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="languages_writing">
+            <th mat-header-cell *matHeaderCellDef> Escrito </th>
+            <td mat-cell *matCellDef="let element"> {{element.languages_writing}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="languages_speaking">
+            <th mat-header-cell *matHeaderCellDef> Hablado </th>
+            <td mat-cell *matCellDef="let element"> {{element.languages_speaking}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <div ngClass="lang-know" fxLayout="column">
+        <div *ngFor="let know of cv.knowledge">
+          <span>{{know.knwoledge_name}}</span>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
 </mat-tab-group>

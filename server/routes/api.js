@@ -38,6 +38,14 @@ router.get('/', (req, res) => {
 
   })
 
+  router.route('/cv')
+
+  .get(function (req, res) {
+    var cv = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/user.json'), 'utf8'));
+    return res.status(200).json(cv);
+
+  });
+
   router.route('/countries')
   .get(function (req, res) {
     var countries = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/countries.json'), 'utf8'));
