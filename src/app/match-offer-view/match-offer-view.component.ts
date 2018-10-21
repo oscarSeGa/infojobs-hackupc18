@@ -13,12 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class MatchOfferViewComponent implements OnInit {
 
-  offers = [
-    {'title': "El trabajo de tu vida joputa"},
-    {'title': "El trabajo de tu vida joputa"},
-    {'title': "El trabajo de tu vida joputa"}
-  ];
-
+  offers:Array<any> = new Array<any>();
   descarted = [];
   apply = [];
 
@@ -30,7 +25,7 @@ export class MatchOfferViewComponent implements OnInit {
 
   ngOnInit() {
     this.sub1 = this.matchOfferViewService.getOffers().subscribe(
-      res => console.log(res),
+      res => {this.offers = res.offers;console.log(this.offers);},
       error => this.errorMessage = <any>error
     );
   }
