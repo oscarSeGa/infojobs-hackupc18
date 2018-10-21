@@ -1,3 +1,7 @@
+<div style="width:100%;margin-top:20px;" fxHide fxShow.gt-xs fxLayoutAlign="end center">
+  <button mat-raised-button color="primary" routerLink="/register">Editar CV</button>
+</div>
+
 <div fxLayout="row wrap" fxLayoutAlign="center start">
   <mat-card *ngIf="cv.personal_information" ngClass="main-info" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
     <h1 fxLayout="row" fxLayoutAlign="space-between center">Información personal <mat-icon>account_circle</mat-icon></h1>
@@ -74,14 +78,11 @@
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="center center">
       <mat-chip-list *ngFor="let keyword of cv.knowledge" style="margin:5px">
-        <mat-chip ngClass="{{keyword.knowledge_level}}" selected>{{keyword.knwoledge_name}}</mat-chip>
+        <mat-chip ngClass="Alto" selected>{{keyword.knwoledge_name}}</mat-chip>
       </mat-chip-list>
     </div>
-    <mat-chip-list ngClass="legend-container" fxLayoutAlign="end center">
-      <mat-chip ngClass="Bajo legend" selected>Bajo</mat-chip>
-      <mat-chip ngClass="Medio legend" selected>Medio</mat-chip>
-      <mat-chip ngClass="Alto legend" selected>Alto</mat-chip>
-    </mat-chip-list>
   </mat-card>
-
+</div>
+<div style="width:100%;margin:20px 0;" fxShow fxHide.gt-xs fxLayoutAlign="center center">
+  <button mat-raised-button color="primary" routerLink="/register">Editar CV</button>
 </div>
