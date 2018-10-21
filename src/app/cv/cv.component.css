@@ -1,15 +1,46 @@
-.personal {
-  background-color: #ffffff;
+.main-info{
+  max-width: 300px;
+  margin: 15px;
 }
-.personal div {
-  min-width: 200px;
-  margin: 10px 0px;
+.main-info h1 {
+  width: 100%;
+  font-size: 16px;
+  padding-bottom: 10px;
+  font-weight: bold;
 }
-h4 {
-  margin: 0 !important;
+.main-info div {
+  min-width: 100px;
+  max-width: 100px!important;
+  overflow-x: hidden;
+  border-bottom: solid 1px rgba(0, 0, 255, 0.2);
 }
-.exp-st {
-  width: 45%;
-  margin: 0px 2.5%;
-  background-color: white;
+.main-info h4 {
+  margin: 5px 0;
+  font-size: 8px;
+  color: #aaa;
+}
+.main-info span {
+  min-height: 15px;
+  font-size: 10px;
+  color: #222;
+}
+.exp-info{
+  max-width: 300px;
+  margin: 15px;
+}
+.exp-info h1 {
+  width: 100%;
+  font-size: 16px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+.knowledge-info{
+  max-width: 300px;
+  margin: 15px;
+}
+.knowledge-info h1 {
+  width: 100%;
+  font-size: 16px;
+  padding-bottom: 10px;
+  font-weight: bold;
 }
