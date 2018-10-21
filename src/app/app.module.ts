@@ -24,6 +24,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CvComponent } from './cv/cv.component';
 import { RegisterComponent } from './register/register.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatTooltipModule,
     MatTabsModule,
     DragDropModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
