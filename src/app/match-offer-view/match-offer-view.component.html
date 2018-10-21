@@ -13,6 +13,9 @@
       <mat-icon >keyboard_arrow_right</mat-icon>
     </div>
   </div>
+  <div ngClass="no-offers-container" *ngIf="offers.length === 0" fxLayoutAlign="center center">
+    <span>No han llegado más ofertas por ahora.</span>
+  </div>
   <!-- WARNING: offer card -->
   <div ngClass="offers-list-container"
     cdkDropList

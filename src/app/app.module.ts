@@ -24,6 +24,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CvComponent } from './cv/cv.component';
 import { RegisterComponent } from './register/register.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 
@@ -57,6 +58,7 @@ import { MatTableModule } from '@angular/material/table';
     MatTabsModule,
     DragDropModule,
     MatSnackBarModule,
+    MatAutocompleteModule,
     MatTableModule,
     MatSidenavModule
   ],

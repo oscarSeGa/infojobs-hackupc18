@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormGroupDirective } from '@angular/forms';
 import { RegisterService } from './register.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -27,9 +27,11 @@ export class RegisterComponent implements OnInit {
   public studies: any[] = [];
   public languages: any[] = [];
   public knowledges: any[] = [];
+  public options: any[] = [];
 
   public sub1: Subscription;
   public sub2: Subscription;
+  public sub3: Subscription;
 
   constructor(private fb: FormBuilder, private registerService: RegisterService, private router: Router) {}
 
@@ -38,6 +40,11 @@ export class RegisterComponent implements OnInit {
       res => this.countries = res,
       error => this.errorMessage = <any>error
     );
+
+    this.sub3 = this.registerService.getKeywords().subscribe(
+      res => this.options = res,
+      error => this.errorMessage = <any>error
+    )
 
     this.firstForm = this.fb.group({
       name: ['', Validators.required],
@@ -48,7 +55,10 @@ export class RegisterComponent implements OnInit {
       country: ['', Validators.required],
       cp: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(5)])],
       place: ['', Validators.required],
-      phone: ['', Validators.compose([Validators.minLength(9), Validators.maxLength(9)])]
+      phone: ['', Validators.compose([Validators.minLength(9), Validators.maxLength(9)])],
+      github: [''],
+      bitbucket: [''],
+      url: ['']
     });
 
     this.secondForm = this.fb.group({
@@ -102,6 +112,22 @@ export class RegisterComponent implements OnInit {
     this.fifthForm.reset();
   }
 
+  deleteExperience(i: number) {
+    this.experienceJobs.splice(i, 1);
+  }
+
+  deleteStudy(i: number) {
+    this.studies.splice(i, 1);
+  }
+
+  deleteLanguage(i: number) {
+    this.languages.splice(i, 1);
+  }
+
+  deleteKnowledge(i: number) {
+    this.knowledges.splice(i, 1);
+  }
+
   saveCV() {
     var cv = {
       "personal_information": this.firstForm.value,
@@ -110,7 +136,7 @@ export class RegisterComponent implements OnInit {
       "languages": this.languages,
       "knowledge": this.knowledges
     };
-    console.info("CV", cv);
+
     this.sub2 = this.registerService.saveCV(cv).subscribe(
       res => {
         this.successMessage = res;
@@ -123,6 +149,7 @@ export class RegisterComponent implements OnInit {
   ngOnDestroy(): void {
     if (this.sub1) this.sub1.unsubscribe();
     if (this.sub2) this.sub2.unsubscribe();
+    if (this.sub3) this.sub3.unsubscribe();
   }
 
 }

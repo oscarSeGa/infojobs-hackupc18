@@ -8,11 +8,18 @@ export class RegisterService {
 
   private countriesUrl = 'api/countries';
   private cvUrl = 'api/cv';
+  private keywordsUrl = 'api/keywords';
 
   constructor(private http: HttpClient) { }
 
   getCountries(): Observable<any> {
     return this.http.get(this.countriesUrl).pipe(
+      map((res: HttpResponse<any>) => res),
+      catchError((error: HttpErrorResponse) => observableThrowError(error || 'Server error')));
+  }
+
+  getKeywords(): Observable<any> {
+    return this.http.get(this.keywordsUrl).pipe(
       map((res: HttpResponse<any>) => res),
       catchError((error: HttpErrorResponse) => observableThrowError(error || 'Server error')));
   }

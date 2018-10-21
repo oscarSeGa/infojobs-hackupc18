@@ -12,8 +12,38 @@ router.get('/', (req, res) => {
   router.route('/recomendations')
   .get(function (req, res) {
     var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
-    ofertas.offers.map(function(oferta) {
+    var user = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../../src/assets/user.json'),'utf8'));
+    let p = user.personal_information.place;
+    let l = user.languages;
+    let k = user.knowledge;
+    
+    var newl = [];
+    var newk = [];
 
+    k.forEach(function(element) {
+      newk.push(element.knwoledge_name.toLowerCase())
+    });
+    
+    l.forEach(function(element) {
+      newl.push(element.languages_name.toLowerCase())
+    });
+
+    ofertas.offers.map(function(oferta) {
+      let max = oferta.keywords.length + oferta.languages.length + 1;
+      var rating = 0;
+      const keywordsintersection = oferta.keywords.filter(element => newk.includes(element.toLowerCase()));
+      rating = rating + keywordsintersection.length;
+      const languagesIntersection = oferta.languages.filter(element => newl.includes(element.toLowerCase()));
+      rating = rating + languagesIntersection.length;
+      if (oferta.city.toLowerCase() == p.toLowerCase()) {
+        rating = rating + 1;
+      }
+      if (rating <= 0) {
+        oferta.rating = rating;
+      } else {
+        oferta.rating = Math.trunc((rating/max)*100);
+      }
+      return;
     });
     return res.status(200).json(ofertas)
   });
@@ -50,6 +80,12 @@ router.get('/', (req, res) => {
   .get(function (req, res) {
     var countries = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/countries.json'), 'utf8'));
     return res.status(200).json(countries);
+  });
+
+  router.route('/keywords')
+  .get(function (req, res) {
+    var keywords = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/keywords.json'), 'utf8'));
+    return res.status(200).json(keywords);
   });
 
 router.route('/test')

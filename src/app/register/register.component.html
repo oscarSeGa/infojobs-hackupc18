@@ -43,6 +43,15 @@
         <input matInput type="text" name="phone" placeholder="Teléfono" formControlName="phone">
         <mat-error *ngIf="firstForm.controls['phone'].hasError('minLength') || firstForm.controls['phone'].hasError('maxLength')">- El teléfono ha de ser de longitud 9. </mat-error>
       </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="github" placeholder="Github URL" formControlName="github">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="bitbucket" placeholder="Bitbucket URL" formControlName="bitbucket">
+      </mat-form-field>
+      <mat-form-field ngClass="form-control-container">
+        <input matInput type="text" name="url" placeholder="Tu página web" formControlName="url">
+      </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="space-around center">
         <button type="button" mat-flat-button color="primary" matStepperNext [disabled]="!firstForm.valid">Siguiente</button>
       </div>
@@ -70,11 +79,13 @@
         </mat-form-field>
       </div>
       <button type="submit" mat-button [disabled]="!secondForm.valid">Guardar</button>
-      <div *ngIf="experienceJobs.length > 0">
-        <div *ngFor="let job of experienceJobs" fxLayout="column">
+      <hr>
+      <div ngClass="vertical-space" *ngIf="experienceJobs.length > 0">
+        <div *ngFor="let job of experienceJobs; let i = index;" fxLayout="column">
           <div fxLayout="row" fxLayout="start center">
             <h4>{{job.experience_job}}</h4>
             <p ngClass="experience-role">({{job.experience_role}})</p>
+            <button type="button" name="delete" (click)="deleteExperience(i);">Eliminar</button>
           </div>
           <span ngClass="experience-dates">{{job.experience_first_date}} - {{job.experience_end_date}}</span>
         </div>
@@ -106,11 +117,13 @@
         </mat-form-field>
       </div>
       <button type="submit" mat-button [disabled]="!thirdForm.valid">Guardar</button>
-      <div *ngIf="studies.length > 0">
+      <hr>
+      <div ngClass="vertical-space" *ngIf="studies.length > 0">
         <div *ngFor="let study of studies" fxLayout="column">
           <div fxLayout="row" fxLayout="start center">
             <h4>{{study.studies_title}}</h4>
             <p *ngIf="study.studies_center" ngClass="experience-role">({{study.studies_center}})</p>
+            <button type="button" name="delete" (click)="deleteStudy(i);">Eliminar</button>
           </div>
           <span ngClass="experience-dates">{{study.studies_first_date}} - {{study.studies_end_date}}</span>
         </div>
@@ -155,10 +168,12 @@
         </mat-form-field>
       </div>
       <button type="submit" mat-button [disabled]="!forthForm.valid">Guardar</button>
-      <div *ngIf="languages.length > 0">
+      <hr>
+      <div ngClass="vertical-space" *ngIf="languages.length > 0">
         <div *ngFor="let lang of languages" fxLayout="column">
           <div fxLayout="row" fxLayout="start center">
             <h4>{{lang.languages_name}}</h4>
+            <button type="button" name="delete" (click)="deleteLanguage(i);">Eliminar</button>
           </div>
           <div fxLayout="row">
             <span>Hablado - {{lang.languages_speaking}}</span>
@@ -177,9 +192,14 @@
     <form [formGroup]="fifthForm" fxLayout="column" #formDirective4="ngForm" (ngSubmit)="addKnowledge(formDirective4)">
       <ng-template matStepLabel>Conocimientos</ng-template>
       <mat-form-field ngClass="form-control-container">
-        <input matInput type="text" name="knwoledge_name" placeholder="Conocimiento" required formControlName="knwoledge_name">
+        <mat-select placeholder="Conocimiento" formControlName="knwoledge_name">
+          <mat-option *ngFor="let option of options" [value]="option.name">
+            {{option.name}}
+          </mat-option>
+        </mat-select>
         <mat-error *ngIf="fifthForm.controls['knwoledge_name'].hasError('required')">- El conocimiento es un campo obligatorio. </mat-error>
       </mat-form-field>
+
       <mat-form-field ngClass="form-control-container">
         <mat-select placeholder="Nivel" formControlName="knowledge_level">
           <mat-option *ngFor="let option of know_level" [value]="option">
@@ -194,6 +214,7 @@
           <div fxLayout="row" fxLayout="space-between center">
             <h4>{{know.knwoledge_name}}</h4>
             <p>{{know.knowledge_level}}</p>
+            <button type="button" name="delete" (click)="deleteKnowledge(i);">Eliminar</button>
           </div>
         </div>
       </div>
