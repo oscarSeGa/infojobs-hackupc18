@@ -38,7 +38,11 @@ router.get('/', (req, res) => {
       if (oferta.city.toLowerCase() == p.toLowerCase()) {
         rating = rating + 1;
       }
-      oferta.rating = Math.trunc((rating/max)*100);
+      if (rating <= 0) {
+        oferta.rating = rating;
+      } else {
+        oferta.rating = Math.trunc((rating/max)*100);
+      }
       return;
     });
     return res.status(200).json(ofertas)
