@@ -137,6 +137,92 @@
           "applications": "0",
           "subSegment": 23,
           "executive": false
-       }
+       },
+       {
+        "id": "319e885f0344a78e3b23642941a26f",
+        "title": "Business Developer Español/Inglés",
+        "province": {
+           "id": 9,
+           "value": "Barcelona"
+        },
+        "city": "Barcelona",
+        "link": "https://www.infojobs.net/barcelona/business-developer-espanol-ingles/of-i319e885f0344a78e3b23642941a26f",
+        "keywords": ["Comercial", "business developer"],
+        "category": {
+           "id": 190,
+           "value": "Comercial y ventas"
+        },
+        "contractType": {
+           "id": 1,
+           "value": "Indefinido"
+        },
+        "subcategory": {
+           "id": 3119,
+           "value": "Comercial"
+        },
+        "salaryMin": {
+           "id": 270,
+           "value": "24.000 €"
+        },
+        "salaryMax": {
+           "id": 280,
+           "value": "30.000 €"
+        },
+        "salaryPeriod": {
+           "id": 3,
+           "value": "Bruto/año"
+        },
+        "experienceMin": {
+           "id": 2,
+           "value": "Al menos 1 año"
+        },
+        "workDay": {
+           "id": 1,
+           "value": "Completa"
+        },
+        "study": {
+           "id": 55,
+           "value": "Formación Profesional Grado Superior"
+        },
+        "published": "2018-09-27T08:18:47.000Z",
+        "updated": "2018-10-18T09:30:01.000Z",
+        "author": {
+           "id": "12055535049571038211715018234676103239",
+           "name": "Run the world",
+           "uri": "http://www.infojobs.net//api.infojobs.net/run-the-world/em-i12055535049571038211715018234676103239",
+           "corporateResponsive": false,
+           "showCorporativeHeader": false
+        },
+        "requirementMin": "Español debajo
+
+Here is your profile:
+
+Degree in Sales, Spanish fluent speaker, profinciency in English
+
+1+ years experience in a sales environment with Spanish and English speaking (the latter not required, but a plus) corporate clients
+
+Excellent verbal and written communication skills as an external representative
+
+Someone who wants to take every opportunity, who is always looking for new challenges A
+
+An active listener
+
+A web and technically affine person would be a plus
+
+ESPAÑOL
+
+Titulado en ADE o en una Business School (o similares), quieres aprender y aportar:
+1+ de experiencia en ventas, por teléfono. No tienes ningún miedo al teléfono. 
+
+Tienes un español y un inglés muy alto o nativo. 
+
+Tienes talento para la negociación y la venta. o en relaciones públicas. Te encantan las nuevas tecnologías",
+        "bold": false,
+        "urgent": false,
+        "color": false,
+        "applications": "105",
+        "subSegment": 23,
+        "executive": false
+     }
     ]
  }
