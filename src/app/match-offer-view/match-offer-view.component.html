@@ -25,10 +25,14 @@
     (cdkDropListDropped)="drop($event)">
 
     <div *ngFor="let offer of offers" ngClass="offer-card-res example-ripple-container mat-elevation-z4" ngClass.gt-xs="offer-card example-ripple-container mat-elevation-z4" matRipple
-     fxLayout="column" fxLayout.gt-xs="row wrap" fxLayoutAlign="space-between stretch" cdkDrag>
+     fxLayout="column" fxLayout.gt-xs="row wrap" fxLayoutAlign="space-between stretch" cdkDrag cdkDragLockAxis="x">
      <div fxLayout="row" fxLayoutAlign="start center">
-       <div ngClass="match-container" fxLayout="column" fxLayoutAlign="center center">
-         <span ngClass="match-num">100%</span>
+       <div [ngClass]="{'match-container':true, 'bad-rating':offer.rating<=20,
+                                                'low-rating':20<offer.rating<=40,
+                                                'medium-rating':40<offer.rating<=60,
+                                                'good-rating':60<offer.rating<=80,
+                                                'awesome-rating':80<offer.rating}" fxLayout="column" fxLayoutAlign="center center">
+         <span ngClass="match-num">{{offer.rating}}%</span>
          <span ngClass="match-lbl">match!</span>
        </div>
       <div ngClass="offer-title"  fxLayout="column" fxLayoutAlign="center start">
