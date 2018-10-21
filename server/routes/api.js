@@ -15,15 +15,15 @@ router.get('/', (req, res) => {
     var user = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../../src/assets/user.json'),'utf8'));
     console.log(user);
     let p = user.personal_information.place;
+    console.log(p);
     let l = user.languages;
+    console.log(l);
     let k = user.knowledge;
-
-
-
+    console.log(k);
     
     ofertas.offers.map(function(oferta) {
       console.log(oferta.keywords);
-      let max = oferta.keywords.length + oferta.language.length + 1;
+      let max = oferta.keywords.length + oferta.languages.length + 1;
       let rating = 0;
       const keywordsintersection = oferta.keywords.filter(element => k.includes(element));
       rating += keywordsintersection;
