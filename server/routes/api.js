@@ -47,6 +47,9 @@ router.get('/', (req, res) => {
       }
       return;
     });
+    ofertas.offers.order.sort(function(a, b) {
+      return a.rating - b.rating
+    })
     return res.status(200).json(ofertas)
   });
 
