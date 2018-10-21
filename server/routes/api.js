@@ -29,6 +29,8 @@ router.get('/', (req, res) => {
     });
 
     ofertas.offers.map(function(oferta) {
+      console.log(oferta);
+      
       let max = oferta.keywords.length + oferta.languages.length + 1;
       var rating = 0;
       const keywordsintersection = oferta.keywords.filter(element => newk.includes(element.toLowerCase()));
