@@ -31,10 +31,16 @@
   width: 40px;
   height: 40px;
 }
+.bad-rating{background-color: #ff4545; color:#fff;}
+.low-rating{background-color: #ffa534; color: #2d3133;}
+.medium-rating{background-color: #ffe234;color: #2d3133;}
+.good-rating{background-color: #b7dd29;color: #2d3133; }
+.awesome-rating{background-color: #29a53d; color:#fff;}
 .offer-title{
 }
 .offer-title-txt{
   font-weight: bold;
+  font-size: 14px;
 }
 .match-container .match-num{
   font-size: 10px;
@@ -97,10 +103,7 @@
   right: 0;
 }
 .drag-ic-container{
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 10px;
+  margin: 10px 0;
   height: 40px;
 }
 /* no offers container  */
@@ -144,5 +147,5 @@
 /*  snackBar */
 ::ng-deep .mat-snack-bar-container{
   min-width: 250px!important;
-  font-size: 12px;
+  font-size: 12px!important;
 }

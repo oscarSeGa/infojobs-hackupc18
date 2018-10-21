@@ -13,12 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class MatchOfferViewComponent implements OnInit {
 
-  offers = [
-    {'title': "El trabajo de tu vida joputa"},
-    {'title': "El trabajo de tu vida joputa"},
-    {'title': "El trabajo de tu vida joputa"}
-  ];
-
+  offers:Array<any> = new Array<any>();
   descarted = [];
   apply = [];
 
@@ -30,20 +25,22 @@ export class MatchOfferViewComponent implements OnInit {
 
   ngOnInit() {
     this.sub1 = this.matchOfferViewService.getOffers().subscribe(
-      res => console.log(res),
+      res => {this.offers = res.offers;console.log(this.offers);},
       error => this.errorMessage = <any>error
     );
   }
 
   drop(event: CdkDragDrop<string[]>) {
+
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+      var item:any = event.previousContainer.data[event.currentIndex];
       if(event.container.id === "apply_list") {
-        this.openSnackBar("Has aplicado a:"+ "JobOffer", "Ok");
+        this.openSnackBar("APPLY:"+ item.title , "Ok");
       } //array i index del item per cridar al apply
       else {
-        this.openSnackBar("Has descartado la oferta:"+ "JobOffer", "Ok");
+        this.openSnackBar("Descartado:"+ item.title, "Ok");
       }
       transferArrayItem(event.previousContainer.data,
         event.container.data,

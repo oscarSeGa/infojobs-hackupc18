@@ -92,10 +92,6 @@ router.route('/test')
   .get(function (req, res) {
     //Success
     return res.status(200).json('GET DONE');
-    /*
-    ERROR
-    return res.status(400).json(err);
-    */
   })
 
   .post(function (req, res) {
