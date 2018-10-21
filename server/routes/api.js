@@ -58,8 +58,8 @@ router.get('/', (req, res) => {
   router.route('/recomendations/reset')
   .post(function (req, res) {
     var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
-    ofertas.offers.map(function(oferta) {
-      oferta.visible = true;
+    ofertas.offers.forEach(element => {
+      element.visible = true
     });
     
     fs.writeFile(path.resolve(__dirname, '../../src/assets/ofertas.json'), JSON.stringify(ofertas), 'utf8', function(err) {
