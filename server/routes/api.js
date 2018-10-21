@@ -13,34 +13,33 @@ router.get('/', (req, res) => {
   .get(function (req, res) {
     var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
     var user = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../../src/assets/user.json'),'utf8'));
-    console.log(user);
     let p = user.personal_information.place;
-    console.log(p);
     let l = user.languages;
-    console.log(l);
     let k = user.knowledge;
-    console.log(k);
+    
+    var newl = [];
+    var newk = [];
+
+    k.forEach(function(element) {
+      newk.push(element.knwoledge_name)
+    });
+    
+    l.forEach(function(element) {
+      newl.push(element.languages_name)
+    });
     
     ofertas.offers.map(function(oferta) {
-      console.log(oferta.keywords);
       let max = oferta.keywords.length + oferta.languages.length + 1;
-      let rating = 0;
-      const keywordsintersection = oferta.keywords.filter(element => k.includes(element));
-      rating += keywordsintersection;
-      const languagesIntersection = oferta.languages.filter(element => l.includes(element));
-      if (oferta.city == p) {
-        rating++;
+      var rating = 0;
+      const keywordsintersection = oferta.keywords.filter(element => newk.includes(element))
+      rating = rating + keywordsintersection.length;
+      const languagesIntersection = oferta.languages.filter(element => newl.includes(element));
+      rating = rating + languagesIntersection.length;
+      if (oferta.city.toLowerCase() == p.toLowerCase()) {
+        rating = rating + 1;
       }
-      if (oferta.languages.length == languagesIntersection) {
-        rating++;
-      } else {
-        rating = 1;
-        //return
-      }
-      
-      console.log(max/rating);
-      
-      return max/rating;
+      oferta.rating = rating/max;
+      return;
     });
     return res.status(200).json(ofertas)
   });

@@ -28,16 +28,35 @@
     ],
     "languages":[
        {
-          "languages_name":"jhdsg",
+          "languages_name":"esp",
           "languages_speaking":"Nativo",
           "languages_reading":"Nativo",
           "languages_writing":"Nativo"
-       }
+       },
+       {
+        "languages_name":"eng",
+        "languages_speaking":"Nativo",
+        "languages_reading":"Nativo",
+        "languages_writing":"Nativo"
+        }  
     ],
     "knowledge":[
        {
-          "knwoledge_name":"kdskds",
+          "knwoledge_name":"javascript",
           "knowledge_level":"Alto"
-       }
+       },
+       {
+        "knwoledge_name":"developer",
+        "knowledge_level":"Alto"
+        },
+        {  
+        "knwoledge_name":"senior",
+        "knowledge_level":"Alto"
+        },
+        {  
+            "knwoledge_name":"web",
+            "knowledge_level":"Alto"
+        }
+
     ]
  }
