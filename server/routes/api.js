@@ -61,6 +61,11 @@ router.get('/', (req, res) => {
     ofertas.offers.map(function(oferta) {
       oferta.visible = true;
     });
+    
+    fs.writeFile(path.resolve(__dirname, '../../src/assets/ofertas.json'), JSON.stringify(ofertas), 'utf8', function(err) {
+      if (err) return res.status(400).json("Error al actualizar las ofertas");
+      return res.status(200).json("Ofertas actualizadas correctamente");
+    });
   });
 
   router.route('/recomendations/:id')
