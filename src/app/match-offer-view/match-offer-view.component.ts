@@ -31,14 +31,16 @@ export class MatchOfferViewComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
+
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+      var item:any = event.previousContainer.data[event.currentIndex];
       if(event.container.id === "apply_list") {
-        this.openSnackBar("Has aplicado a:"+ "JobOffer", "Ok");
+        this.openSnackBar("APPLY:"+ item.title , "Ok");
       } //array i index del item per cridar al apply
       else {
-        this.openSnackBar("Has descartado la oferta:"+ "JobOffer", "Ok");
+        this.openSnackBar("Descartado:"+ item.title, "Ok");
       }
       transferArrayItem(event.previousContainer.data,
         event.container.data,
