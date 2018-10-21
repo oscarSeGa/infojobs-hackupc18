@@ -1,29 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div id="main-container">
   <div ngClass="toolbar-container" fxLayout="row" fxLayoutAlign="space-between center">
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <span ngClass="infojobs-logo">InfoJobs</span>
-      <span>Empleo</span>
-      <span>Executive</span>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <img ngClass="ic-logo" src="../assets/images/ij-logo_claim_primary-white.svg" alt="">
+      <span>Executive!</span>
       <span>Formación</span>
       <span>Consejos</span>
+      <span>Zona Empresas</span>
     </div>
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <span *ngIf="username">{{username}}</span>
-      <span *ngIf="!username">ACCEDE</span>
-      <span *ngIf="username">Cerrar Sesión</span>
-      <span *ngIf="!username">DATE DE ALTA</span>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <span ngClass="active-item">MATCHES!</span>
+      <span>Mi CV</span>
     </div>
-  </div>
-  <div ngClass="subtoolbar-container" fxLayout="row" fxLayoutAlign="start center">
-    <span>Mi InfoJobs</span>
-    <span>Buscar ofertas</span>
-    <span>Mis CVs</span>
-    <span>Candidaturas</span>
-    <span>Mensajes</span>
-    <span>Quién me ve</span>
-    <span>Ajustes</span>
-    <span>Ayuda</span>
   </div>
 
   <router-outlet></router-outlet>
