@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {MatSnackBar} from '@angular/material';
+import { MatchOfferViewService } from './match-offer-view.service';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-match-offer-view',
   templateUrl: './match-offer-view.component.html',
-  styleUrls: ['./match-offer-view.component.css']
+  styleUrls: ['./match-offer-view.component.css'],
+  providers: [MatchOfferViewService]
 })
 export class MatchOfferViewComponent implements OnInit {
 
@@ -18,9 +22,17 @@ export class MatchOfferViewComponent implements OnInit {
   descarted = [];
   apply = [];
 
-  constructor(public snackBar: MatSnackBar) { }
+  public errorMessage: String;
+
+  public sub1: Subscription;
+
+  constructor(public snackBar: MatSnackBar, private matchOfferViewService: MatchOfferViewService) { }
 
   ngOnInit() {
+    this.sub1 = this.matchOfferViewService.getOffers().subscribe(
+      res => console.log(res),
+      error => this.errorMessage = <any>error
+    );
   }
 
   drop(event: CdkDragDrop<string[]>) {
