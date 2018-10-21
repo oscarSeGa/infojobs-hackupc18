@@ -31,6 +31,7 @@ router.get('/', (req, res) => {
 
   router.route('/recomendations/:id')
   .put(function (req, res) {
+    
     var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
     ofertas.offers.forEach(function(oferta) {
       if (oferta.id == req.params.id) oferta.visible = false;
