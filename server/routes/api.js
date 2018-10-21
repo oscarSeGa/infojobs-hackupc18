@@ -55,16 +55,20 @@ router.get('/', (req, res) => {
     return res.status(200).json(ofertas)
   });
 
+  router.route('/recomendations/reset')
+  .post(function (req, res) {
+    var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
+    ofertas.offers.map(function(oferta) {
+      oferta.visible = true;
+    });
+  });
+
   router.route('/recomendations/:id')
   .put(function (req, res) {
-
     var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
-    console.info("OFERTAS", ofertas);
     ofertas.offers.forEach(function(oferta) {
-      console.info("ID", oferta.id, req.params.id);
       if (oferta.id == req.params.id) oferta.visible = false;
     });
-
     fs.writeFile(path.resolve(__dirname, '../../src/assets/ofertas.json'), JSON.stringify(ofertas), 'utf8', function(err) {
       if (err) return res.status(400).json("Error al actualizar las ofertas");
       return res.status(200).json("Ofertas actualizadas correctamente");
