@@ -21,19 +21,19 @@ router.get('/', (req, res) => {
     var newk = [];
 
     k.forEach(function(element) {
-      newk.push(element.knwoledge_name)
+      newk.push(element.knwoledge_name.toLowerCase())
     });
     
     l.forEach(function(element) {
-      newl.push(element.languages_name)
+      newl.push(element.languages_name.toLowerCase())
     });
 
     ofertas.offers.map(function(oferta) {
       let max = oferta.keywords.length + oferta.languages.length + 1;
       var rating = 0;
-      const keywordsintersection = oferta.keywords.filter(element => newk.includes(element))
+      const keywordsintersection = oferta.keywords.filter(element => newk.includes(element.toLowerCase()));
       rating = rating + keywordsintersection.length;
-      const languagesIntersection = oferta.languages.filter(element => newl.includes(element));
+      const languagesIntersection = oferta.languages.filter(element => newl.includes(element.toLowerCase()));
       rating = rating + languagesIntersection.length;
       if (oferta.city.toLowerCase() == p.toLowerCase()) {
         rating = rating + 1;
@@ -72,6 +72,12 @@ router.get('/', (req, res) => {
   .get(function (req, res) {
     var countries = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/countries.json'), 'utf8'));
     return res.status(200).json(countries);
+  });
+
+  router.route('/keywords')
+  .get(function (req, res) {
+    var keywords = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/keywords.json'), 'utf8'));
+    return res.status(200).json(keywords);
   });
 
 router.route('/test')
