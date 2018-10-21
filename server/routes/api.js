@@ -27,16 +27,17 @@ router.get('/', (req, res) => {
       let rating = 0;
       const keywordsintersection = oferta.keywords.filter(element => k.includes(element));
       rating += keywordsintersection;
-      const languagesIntersection = oferta.language.filter(element => l.includes(element));
+      const languagesIntersection = oferta.languages.filter(element => l.includes(element));
       if (oferta.city == p) {
         rating++;
       }
-      if (oferta.language.length == languagesIntersection) {
+      if (oferta.languages.length == languagesIntersection) {
         rating++;
       } else {
-        rating = 0;
-        return
+        rating = 1;
+        //return
       }
+      
       console.log(max/rating);
       
       return max/rating;
