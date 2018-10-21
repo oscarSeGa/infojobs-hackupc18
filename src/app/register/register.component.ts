@@ -42,13 +42,13 @@ export class RegisterComponent implements OnInit {
     this.firstForm = this.fb.group({
       name: ['', Validators.required],
       surname: [''],
-      email: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
       birthday: ['', Validators.required],
-      gender: ['', Validators.required],
+      gender: [''],
       country: ['', Validators.required],
-      cp: ['', Validators.required],
+      cp: ['', Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(5)])],
       place: ['', Validators.required],
-      phone: ['']
+      phone: ['', Validators.compose([Validators.minLength(9), Validators.maxLength(9)])]
     });
 
     this.secondForm = this.fb.group({

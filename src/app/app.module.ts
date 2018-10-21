@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
 import { CvComponent } from './cv/cv.component';
 import { RegisterComponent } from './register/register.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -51,6 +52,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatChipsModule,
     MatRippleModule,
     MatTooltipModule,
+    MatTabsModule,
     DragDropModule,
     MatSnackBarModule
   ],

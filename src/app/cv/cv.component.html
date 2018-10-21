@@ -1,3 +1,45 @@
-<p>
-  cv works!
-</p>
+<mat-tab-group>
+  <mat-tab label="Información personal">
+    <div fxLayout="row">
+      <!-- "name":"Óscar","surname":"Serrano","email":"oscar.serrano7@gmail.com","birthday":"2018-10-01","gender":"male","country":"Spain","cp":"05562","place":"Barcelona","phone":"123456789" -->
+      <div fxLayout="column">
+        <h6>Nombre</h6>
+        <span>{{cv.personal_information.name}}</span>
+      </div>
+      <div fxLayout="column">
+        <h6>Apellidos</h6>
+        <span>{{cv.personal_information.surname}}</span>
+      </div>
+      <div fxLayout="column">
+        <h6>Correo electrónico</h6>
+        <span>{{cv.personal_information.email}}</span>
+      </div>
+      <div fxLayout="column">
+        <h6>Dia de nacimiento</h6>
+        <span>{{cv.personal_information.birthday}}</span>
+      </div>
+      <div fxLayout="column" *ngIf="cv.personal_information.gender">
+        <h6>Genero</h6>
+        <span>{{cv.personal_information.gender}}</span>
+      </div>
+      <div fxLayout="column">
+        <h6>País</h6>
+        <span>{{cv.personal_information.country}}</span>
+      </div>
+      <div fxLayout="column">
+        <h6>Codigo postal</h6>
+        <span>{{cv.personal_information.cp}}</span>
+      </div>
+      <div fxLayout="column">
+        <h6>Ciudad/Provincia</h6>
+        <span>{{cv.personal_information.place}}</span>
+      </div>
+      <div fxLayout="column">
+        <h6>Telefono</h6>
+        <span>{{cv.personal_information.phone}}</span>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Second"> Content 2 </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>

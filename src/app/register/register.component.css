@@ -24,3 +24,6 @@ h4, p {
 .experience-dates {
   font-size: 12px;
 }
+mat-radio-group {
+  margin-bottom: 8px;
+}

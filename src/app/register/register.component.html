@@ -4,35 +4,44 @@
       <ng-template matStepLabel>Información personal</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="name" placeholder="Nombre" required formControlName="name">
+        <mat-error *ngIf="firstForm.controls['name'].hasError('required')">- El nombre es un campo obligatorio. </mat-error>
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="surname" placeholder="Apellidos" formControlName="surname">
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="email" name="email" placeholder="Correo electrónico" required formControlName="email">
+        <mat-error *ngIf="firstForm.controls['email'].hasError('required')">- El correo electrónico es un campo obligatorio. </mat-error>
+        <mat-error *ngIf="firstForm.controls['email'].hasError('eail')">- Es necesario un correo electrónico válido. </mat-error>
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="date" name="birthday" placeholder="Fecha de nacimiento" required formControlName="birthday">
+        <mat-error *ngIf="firstForm.controls['birthday'].hasError('required')">- La fecha de nacimiento es un campo obligatorio. </mat-error>
       </mat-form-field>
       <mat-radio-group formControlName="gender">
         <mat-radio-button value="male">Hombre</mat-radio-button>
         <mat-radio-button value="female" ngClass="female-radio-btn">Mujer</mat-radio-button>
       </mat-radio-group>
       <mat-form-field ngClass="form-control-container">
-        <mat-select placeholder="Pais de residencia" formControlName="country">
+        <mat-select placeholder="Pais de residencia" formControlName="country" required>
           <mat-option *ngFor="let country of countries" [value]="country.name">
             {{country.name}}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="firstForm.controls['country'].hasError('required')">- El pais de residencia es un campo obligatorio. </mat-error>
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="cp" placeholder="Código postal" required formControlName="cp">
+        <mat-error *ngIf="firstForm.controls['cp'].hasError('required')">- El código postal es un campo obligatorio. </mat-error>
+        <mat-error *ngIf="firstForm.controls['cp'].hasError('minLength') || firstForm.controls['cp'].hasError('maxLength')">- El código postal ha de ser de longitud 5. </mat-error>
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="place" placeholder="Población" required formControlName="place">
+        <mat-error *ngIf="firstForm.controls['place'].hasError('required')">- La población es un campo obligatorio. </mat-error>
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
-        <input matInput type="number" name="phone" placeholder="Teléfono" formControlName="phone">
+        <input matInput type="text" name="phone" placeholder="Teléfono" formControlName="phone">
+        <mat-error *ngIf="firstForm.controls['phone'].hasError('minLength') || firstForm.controls['phone'].hasError('maxLength')">- El teléfono ha de ser de longitud 9. </mat-error>
       </mat-form-field>
       <div fxLayout="row" fxLayoutAlign="space-around center">
         <button type="button" mat-flat-button color="primary" matStepperNext [disabled]="!firstForm.valid">Siguiente</button>
@@ -44,16 +53,20 @@
       <ng-template matStepLabel>Experiencia</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="experience_job" placeholder="Empresa" required formControlName="experience_job">
+        <mat-error *ngIf="secondForm.controls['experience_job'].hasError('required')">- La empresa es un campo obligatorio. </mat-error>
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="experience_role" placeholder="Puesto" required formControlName="experience_role">
+        <mat-error *ngIf="secondForm.controls['experience_role'].hasError('required')">- El puesto es un campo obligatorio. </mat-error>
       </mat-form-field>
       <div fxLayout="row">
         <mat-form-field ngClass="form-control-container">
           <input matInput type="date" name="experience_first_date" placeholder="Fecha de inicio" required formControlName="experience_first_date">
+          <mat-error *ngIf="secondForm.controls['experience_first_date'].hasError('required')">- La fecha de inciio es un campo obligatorio. </mat-error>
         </mat-form-field>
         <mat-form-field ngClass="form-control-container">
           <input matInput type="date" name="experience_end_date" placeholder="Fecha de fin" required formControlName="experience_end_date">
+          <mat-error *ngIf="secondForm.controls['experience_end_date'].hasError('required')">- La fecha de fin es un campo obligatorio. </mat-error>
         </mat-form-field>
       </div>
       <button type="submit" mat-button [disabled]="!secondForm.valid">Guardar</button>
@@ -77,6 +90,7 @@
       <ng-template matStepLabel>Estudios</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="studies_title" placeholder="Título" required formControlName="studies_title">
+        <mat-error *ngIf="thirdForm.controls['studies_title'].hasError('required')">- El titulo es un campo obligatorio. </mat-error>
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="studies_center" placeholder="Centro" formControlName="studies_center">
@@ -84,9 +98,11 @@
       <div fxLayout="row">
         <mat-form-field ngClass="form-control-container">
           <input matInput type="date" name="studies_first_date" placeholder="Fecha de inicio" required formControlName="studies_first_date">
+          <mat-error *ngIf="thirdForm.controls['studies_first_date'].hasError('required')">- La fecha de inicio un campo obligatorio. </mat-error>
         </mat-form-field>
         <mat-form-field ngClass="form-control-container">
           <input matInput type="date" name="studies_end_date" placeholder="Fecha de fin" required formControlName="studies_end_date">
+          <mat-error *ngIf="thirdForm.controls['studies_end_date'].hasError('required')">- La fecha de final es un campo obligatorio. </mat-error>
         </mat-form-field>
       </div>
       <button type="submit" mat-button [disabled]="!thirdForm.valid">Guardar</button>
@@ -110,6 +126,7 @@
       <ng-template matStepLabel>Idiomas</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="languages_name" placeholder="Lenguaje" required formControlName="languages_name">
+        <mat-error *ngIf="forthForm.controls['languages_name'].hasError('required')">- El lenguage es un campo obligatorio. </mat-error>
       </mat-form-field>
       <div fxLayout="row">
         <mat-form-field ngClass="form-control-container">
@@ -118,6 +135,7 @@
               {{option}}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="forthForm.controls['languages_speaking'].hasError('required')">- El nivel hablado es un campo obligatorio. </mat-error>
         </mat-form-field>
         <mat-form-field ngClass="form-control-container">
           <mat-select placeholder="Leido" formControlName="languages_reading">
@@ -125,6 +143,7 @@
               {{option}}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="forthForm.controls['languages_reading'].hasError('required')">- El nivel leido es un campo obligatorio. </mat-error>
         </mat-form-field>
         <mat-form-field ngClass="form-control-container">
           <mat-select placeholder="Escrito" formControlName="languages_writing">
@@ -132,6 +151,7 @@
               {{option}}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="forthForm.controls['languages_writing'].hasError('required')">- El nivel escrito es un campo obligatorio. </mat-error>
         </mat-form-field>
       </div>
       <button type="submit" mat-button [disabled]="!forthForm.valid">Guardar</button>
@@ -158,6 +178,7 @@
       <ng-template matStepLabel>Conocimientos</ng-template>
       <mat-form-field ngClass="form-control-container">
         <input matInput type="text" name="knwoledge_name" placeholder="Conocimiento" required formControlName="knwoledge_name">
+        <mat-error *ngIf="fifthForm.controls['knwoledge_name'].hasError('required')">- El conocimiento es un campo obligatorio. </mat-error>
       </mat-form-field>
       <mat-form-field ngClass="form-control-container">
         <mat-select placeholder="Nivel" formControlName="knowledge_level">
@@ -165,6 +186,7 @@
             {{option}}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="fifthForm.controls['knowledge_level'].hasError('required')">- El nivel de conocimiento es un campo obligatorio. </mat-error>
       </mat-form-field>
       <button type="submit" mat-button [disabled]="!fifthForm.valid">Guardar</button>
       <div *ngIf="knowledges.length > 0">
