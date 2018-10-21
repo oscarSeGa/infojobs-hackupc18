@@ -57,11 +57,9 @@ router.get('/', (req, res) => {
 
   router.route('/recomendations/reset')
   .post(function (req, res) {
-    console.log("hi");
     
     var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
     ofertas.offers.forEach(element => {
-      console.log(element.title + "  " + element.visible);
       
       element.visible = true
     });
