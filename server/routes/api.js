@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
     l.forEach(function(element) {
       newl.push(element.languages_name)
     });
-    
+
     ofertas.offers.map(function(oferta) {
       let max = oferta.keywords.length + oferta.languages.length + 1;
       var rating = 0;
@@ -38,7 +38,7 @@ router.get('/', (req, res) => {
       if (oferta.city.toLowerCase() == p.toLowerCase()) {
         rating = rating + 1;
       }
-      oferta.rating = rating/max;
+      oferta.rating = Math.trunc((rating/max)*100);
       return;
     });
     return res.status(200).json(ofertas)
