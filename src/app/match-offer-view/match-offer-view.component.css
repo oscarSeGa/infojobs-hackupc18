@@ -40,6 +40,7 @@
 }
 .offer-title-txt{
   font-weight: bold;
+  font-size: 14px;
 }
 .match-container .match-num{
   font-size: 10px;
@@ -102,10 +103,7 @@
   right: 0;
 }
 .drag-ic-container{
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 10px;
+  margin: 10px 0;
   height: 40px;
 }
 /* no offers container  */
