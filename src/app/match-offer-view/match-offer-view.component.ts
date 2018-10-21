@@ -50,7 +50,12 @@ export class MatchOfferViewComponent implements OnInit {
 
   apiDrop(i: number) {
     this.sub2 = this.matchOfferViewService.updateOffers(this.offers[i]).subscribe(
-      res => this.offers.splice(i, 1),
+      res => {
+        this.sub1 = this.matchOfferViewService.getOffers().subscribe(
+          res => this.offers = res,
+          error => this.errorMessage = <any>error
+        );
+      },
       error => this.errorMessage = <any>error
     );
   }
