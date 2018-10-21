@@ -14,8 +14,13 @@ export class MatchOfferViewService {
   constructor(private http: HttpClient) { }
 
   getOffers(): Observable<any> {
-    console.log("getOffers()");
     return this.http.get(this.recomendationsUrl).pipe(
+      map((res: HttpResponse<any>) => res),
+      catchError((error: HttpErrorResponse) => observableThrowError(error || 'Server error')));
+  }
+
+  updateOffers(offer: any): Observable<any> {
+    return this.http.put(this.recomendationsUrl+'/'+offer.id, null).pipe(
       map((res: HttpResponse<any>) => res),
       catchError((error: HttpErrorResponse) => observableThrowError(error || 'Server error')));
   }

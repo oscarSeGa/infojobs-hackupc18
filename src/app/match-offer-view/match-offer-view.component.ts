@@ -20,17 +20,18 @@ export class MatchOfferViewComponent implements OnInit {
   public errorMessage: String;
 
   public sub1: Subscription;
+  public sub2: Subscription;
 
   constructor(public snackBar: MatSnackBar, private matchOfferViewService: MatchOfferViewService) { }
 
   ngOnInit() {
     this.sub1 = this.matchOfferViewService.getOffers().subscribe(
-      res => {this.offers = res.offers;console.log(this.offers);},
+      res => this.offers = res,
       error => this.errorMessage = <any>error
     );
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: CdkDragDrop<string[]>, i: number) {
 
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -46,8 +47,17 @@ export class MatchOfferViewComponent implements OnInit {
         event.container.data,
         event.previousIndex,
         event.currentIndex);
+      this.apiDrop(i);
     }
   }
+
+  apiDrop(i: number) {
+    this.sub2 = this.matchOfferViewService.updateOffers(this.offers[i]).subscribe(
+      res => this.offers.splice(i, 1),
+      error => this.errorMessage = <any>error
+    );
+  }
+
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action);
   }
