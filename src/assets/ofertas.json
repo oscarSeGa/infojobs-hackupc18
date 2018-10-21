@@ -1,142 +1,230 @@
 {
-    "currentPage": 1,
-    "pageSize": 2,
-    "totalResults": 2,
-    "currentResults": 1,
-    "totalPages": 1,
-    "dataLayer": {
-       "es-sch-region_level2_id": "0"
+    "currentPage":1,
+    "pageSize":2,
+    "totalResults":2,
+    "currentResults":1,
+    "totalPages":1,
+    "dataLayer":{
+       "es-sch-region_level2_id":"0"
     },
-    "offers": [
+    "offers":[
        {
-          "id": "998fd1bf1548ba89daff1bd85b2031",
-          "title": "desarrollador web javascript",
-          "province": {
-             "id": 33,
-             "value": "Madrid"
+          "id":"998fd1bf1548ba89daff1bd85b2031",
+          "title":"desarrollador web javascript",
+          "province":{
+             "id":33,
+             "value":"Madrid"
           },
-          "city": "Barcelona",
-          "languages": ["esp", "eng"],
-          "link": "https://www.infojobs.net/getafe/tecnico-reparacion-portatil/of-i998fd1bf1548ba89daff1bd85b2031",
-          "keywords": ["javascript", "developer", "junior", "web"],
-          "category": {
-             "id": 80,
-             "value": "Ingenieros y técnicos"
+          "city":"Barcelona",
+          "languages":[
+             "esp",
+             "eng"
+          ],
+          "link":"https://www.infojobs.net/getafe/tecnico-reparacion-portatil/of-i998fd1bf1548ba89daff1bd85b2031",
+          "keywords":[
+             "javascript",
+             "developer",
+             "junior",
+             "web"
+          ],
+          "category":{
+             "id":80,
+             "value":"Ingenieros y técnicos"
           },
-          "contractType": {
-             "id": 8,
-             "value": "De duración determinada"
+          "contractType":{
+             "id":8,
+             "value":"De duración determinada"
           },
-          "subcategory": {
-             "id": 3046,
-             "value": "Electrónica"
+          "subcategory":{
+             "id":3046,
+             "value":"Electrónica"
           },
-          "salaryMin": {
-             "id": 0,
-             "value": ""
+          "salaryMin":{
+             "id":0,
+             "value":""
           },
-          "salaryMax": {
-             "id": 0,
-             "value": ""
+          "salaryMax":{
+             "id":0,
+             "value":""
           },
-          "salaryPeriod": {
-             "id": 0,
-             "value": ""
+          "salaryPeriod":{
+             "id":0,
+             "value":""
           },
-          "experienceMin": {
-             "id": 2,
-             "value": "Al menos 1 año"
+          "experienceMin":{
+             "id":2,
+             "value":"Al menos 1 año"
           },
-          "workDay": {
-             "id": 1,
-             "value": "Completa"
+          "workDay":{
+             "id":1,
+             "value":"Completa"
           },
-          "study": {
-             "id": 30,
-             "value": "Formación Profesional Grado Medio"
+          "study":{
+             "id":30,
+             "value":"Formación Profesional Grado Medio"
           },
-          "published": "2018-10-20T14:04:08.000Z",
-          "updated": "2018-10-20T14:04:08.000Z",
-          "author": {
-             "id": "87376e055e473495ade1a05d7877df",
-             "name": "Flexiplan",
-             "uri": "http://www.infojobs.net//grupo-eulen.trabajo.infojobs.net",
-             "logoUrl": "http://www.infojobs.net/logo/logo/do-get.xhtml?id=14030012544",
-             "corporateResponsive": true,
-             "showCorporativeHeader": true
+          "published":"2018-10-20T14:04:08.000Z",
+          "updated":"2018-10-20T14:04:08.000Z",
+          "author":{
+             "id":"87376e055e473495ade1a05d7877df",
+             "name":"Flexiplan",
+             "uri":"http://www.infojobs.net//grupo-eulen.trabajo.infojobs.net",
+             "logoUrl":"http://www.infojobs.net/logo/logo/do-get.xhtml?id=14030012544",
+             "corporateResponsive":true,
+             "showCorporativeHeader":true
           },
-          "requirementMin": "",
-          "bold": false,
-          "urgent": false,
-          "color": false,
-          "applications": "0",
-          "subSegment": 23,
-          "executive": false
-       }, 
+          "requirementMin":"",
+          "bold":false,
+          "urgent":false,
+          "color":false,
+          "applications":"0",
+          "subSegment":23,
+          "executive":false
+       },
        {
-          "id": "998fd1bf1548ba89daff1bd85b2031",
-          "title": "Técnico Reparación Portátil",
-          "province": {
-             "id": 33,
-             "value": "Madrid"
+          "id":"998fd1bf1548ba89daff1bd85b2031",
+          "title":"Técnico Reparación Portátil",
+          "province":{
+             "id":33,
+             "value":"Madrid"
           },
-          "city": "Barcelona",
-          "languages": ["esp", "eng"],
-          "link": "https://www.infojobs.net/getafe/tecnico-reparacion-portatil/of-i998fd1bf1548ba89daff1bd85b2031",
-          "keywords": ["hardware", "portatiles", "junior", "tecnico", "fp"],
-          "category": {
-             "id": 80,
-             "value": "Ingenieros y técnicos"
+          "city":"Barcelona",
+          "languages":[
+             "esp",
+             "eng"
+          ],
+          "link":"https://www.infojobs.net/getafe/tecnico-reparacion-portatil/of-i998fd1bf1548ba89daff1bd85b2031",
+          "keywords":[
+             "hardware",
+             "portatiles",
+             "junior",
+             "tecnico",
+             "fp"
+          ],
+          "category":{
+             "id":80,
+             "value":"Ingenieros y técnicos"
           },
-          "contractType": {
-             "id": 8,
-             "value": "De duración determinada"
+          "contractType":{
+             "id":8,
+             "value":"De duración determinada"
           },
-          "subcategory": {
-             "id": 3046,
-             "value": "Electrónica"
+          "subcategory":{
+             "id":3046,
+             "value":"Electrónica"
           },
-          "salaryMin": {
-             "id": 0,
-             "value": ""
+          "salaryMin":{
+             "id":0,
+             "value":""
           },
-          "salaryMax": {
-             "id": 0,
-             "value": ""
+          "salaryMax":{
+             "id":0,
+             "value":""
           },
-          "salaryPeriod": {
-             "id": 0,
-             "value": ""
+          "salaryPeriod":{
+             "id":0,
+             "value":""
           },
-          "experienceMin": {
-             "id": 2,
-             "value": "Al menos 1 año"
+          "experienceMin":{
+             "id":2,
+             "value":"Al menos 1 año"
           },
-          "workDay": {
-             "id": 1,
-             "value": "Completa"
+          "workDay":{
+             "id":1,
+             "value":"Completa"
           },
-          "study": {
-             "id": 30,
-             "value": "Formación Profesional Grado Medio"
+          "study":{
+             "id":30,
+             "value":"Formación Profesional Grado Medio"
           },
-          "published": "2018-10-20T14:04:08.000Z",
-          "updated": "2018-10-20T14:04:08.000Z",
-          "author": {
-             "id": "87376e055e473495ade1a05d7877df",
-             "name": "Flexiplan",
-             "uri": "http://www.infojobs.net//grupo-eulen.trabajo.infojobs.net",
-             "logoUrl": "http://www.infojobs.net/logo/logo/do-get.xhtml?id=14030012544",
-             "corporateResponsive": true,
-             "showCorporativeHeader": true
+          "published":"2018-10-20T14:04:08.000Z",
+          "updated":"2018-10-20T14:04:08.000Z",
+          "author":{
+             "id":"87376e055e473495ade1a05d7877df",
+             "name":"Flexiplan",
+             "uri":"http://www.infojobs.net//grupo-eulen.trabajo.infojobs.net",
+             "logoUrl":"http://www.infojobs.net/logo/logo/do-get.xhtml?id=14030012544",
+             "corporateResponsive":true,
+             "showCorporativeHeader":true
           },
-          "requirementMin": "",
-          "bold": false,
-          "urgent": false,
-          "color": false,
-          "applications": "0",
-          "subSegment": 23,
-          "executive": false
+          "requirementMin":"",
+          "bold":false,
+          "urgent":false,
+          "color":false,
+          "applications":"0",
+          "subSegment":23,
+          "executive":false
+       },
+       {
+          "id":"319e885f0344a78e3b23642941a26f",
+          "title":"Business Developer Español/Inglés",
+          "province":{
+             "id":9,
+             "value":"Barcelona"
+          },
+          "city":"Barcelona",
+          "languages":[
+            "esp",
+            "eng",
+            "cat"
+         ],
+          "link":"https://www.infojobs.net/barcelona/business-developer-espanol-ingles/of-i319e885f0344a78e3b23642941a26f",
+          "keywords":[
+             "Comercial",
+             "business developer"
+          ],
+          "category":{
+             "id":190,
+             "value":"Comercial y ventas"
+          },
+          "contractType":{
+             "id":1,
+             "value":"Indefinido"
+          },
+          "subcategory":{
+             "id":3119,
+             "value":"Comercial"
+          },
+          "salaryMin":{
+             "id":270,
+             "value":"24.000 €"
+          },
+          "salaryMax":{
+             "id":280,
+             "value":"30.000 €"
+          },
+          "salaryPeriod":{
+             "id":3,
+             "value":"Bruto/año"
+          },
+          "experienceMin":{
+             "id":2,
+             "value":"Al menos 1 año"
+          },
+          "workDay":{
+             "id":1,
+             "value":"Completa"
+          },
+          "study":{
+             "id":55,
+             "value":"Formación Profesional Grado Superior"
+          },
+          "published":"2018-09-27T08:18:47.000Z",
+          "updated":"2018-10-18T09:30:01.000Z",
+          "author":{
+             "id":"12055535049571038211715018234676103239",
+             "name":"Run the world",
+             "uri":"http://www.infojobs.net//api.infojobs.net/run-the-world/em-i12055535049571038211715018234676103239",
+             "corporateResponsive":false,
+             "showCorporativeHeader":false
+          },
+          "requirementMin":"Here is your profile: Degree in Sales, Spanish fluent speaker, profinciency in English 1+ years experience in a sales environment with Spanish and English speaking (the latter not required, but a plus) corporate clients Excellent verbal and written communication skills as an external representative Someone who wants to take every opportunity, who is always looking for new challenges A An active listener A web and technically affine person would be a plus ESPAÑOL Titulado en ADE o en una Business School (o similares), quieres aprender y aportar: 1+ de experiencia en ventas, por teléfono. No tienes ningún miedo al teléfono.  Tienes un español y un inglés muy alto o nativo.  Tienes talento para la negociación y la venta. o en relaciones públicas. Te encantan las nuevas tecnologías",
+          "bold":false,
+          "urgent":false,
+          "color":false,
+          "applications":"105",
+          "subSegment":23,
+          "executive":false
        }
     ]
  }
