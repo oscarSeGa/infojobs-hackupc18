@@ -28,10 +28,10 @@
        fxLayout="column" fxLayout.gt-xs="row wrap" fxLayoutAlign="space-between stretch" cdkDrag cdkDragLockAxis="x">
        <div fxLayout="row" fxLayoutAlign="space-between center">
          <div [ngClass]="{'match-container':true, 'bad-rating':offer.rating<=20,
-                                                  'low-rating':20<offer.rating<=40,
-                                                  'medium-rating':40<offer.rating<=60,
-                                                  'good-rating':60<offer.rating<=80,
-                                                  'awesome-rating':80<offer.rating}" fxLayout="column" fxLayoutAlign="center center">
+                                                  'low-rating':20 < offer.rating && offer.rating <= 40,
+                                                  'medium-rating':40 < offer.rating && offer.rating <= 60,
+                                                  'good-rating':60 < offer.rating && offer.rating <= 80,
+                                                  'awesome-rating':80 < offer.rating}" fxLayout="column" fxLayoutAlign="center center">
            <span ngClass="match-num">{{offer.rating}}%</span>
            <span ngClass="match-lbl">match!</span>
          </div>
