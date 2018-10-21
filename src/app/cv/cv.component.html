@@ -38,31 +38,50 @@
       <span>{{cv.personal_information.phone ? cv.personal_information.phone : '-'}}</span>
     </div>
   </mat-card>
-  <mat-card ngClass="exp-info" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+  <mat-card ngClass="exp-info" fxLayout="column" fxLayoutAlign="space-evenly start">
     <h1 fxLayout="row" fxLayoutAlign="space-between center">Experiencia y estudios <mat-icon>account_balance</mat-icon></h1>
     <div *ngFor="let exp of cv.experience" fxLayout="column">
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <span>{{exp.experience_job}}</span>
-        <span>{{exp.experience_first_date}} - {{exp.experience_end_date}}</span>
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <h4>{{exp.experience_job}} | </h4>
+        <h3> {{ exp.experience_role}}</h3>
       </div>
-      <span>{{exp.experience_role}}</span>
+      <span>{{exp.experience_first_date}} - {{exp.experience_end_date}}</span>
     </div>
-    <div fxLayout="row wrap">
-      <div *ngFor="let st of cv.studies">
-        <span>{{st.title}}</span>
+
+    <div fxLayout="column">
+      <div *ngFor="let st of cv.studies" fxLayout="column">
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <h4>{{st.studies_center}} | </h4>
+          <h3> {{st.studies_title}}</h3>
+        </div>
+        <span>{{st.studies_first_date}} - {{st.studies_end_date}}</span>
       </div>
     </div>
   </mat-card>
-  <mat-card ngClass="knowledge-info" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+  <mat-card ngClass="knowledge-info" fxLayout="column" fxLayoutAlign="space-evenly center">
     <h1 fxLayout="row" fxLayoutAlign="space-between center">Idiomas y Conocimientos <mat-icon>assignment_ind</mat-icon></h1>
-    <div *ngFor="let exp of cv.experience" fxLayout="column">
-
+    <div ngClass="lan-head" fxLayout="row">
+      <h3>Idioma|</h3>
+      <h4>Lectura-</h4>
+      <h4>Habla-</h4>
+      <h4>Escrito</h4>
     </div>
-    <div fxLayout="row wrap">
-      <mat-chip-list *ngFor="let keyword of cv.knowledge">
-        <mat-chip color="primary" selected>{{keyword}}</mat-chip>
+    <div *ngFor="let lan of cv.languages" fxLayout="row">
+      <h3>{{lan.languages_name}}|</h3>
+      <h4>{{lan.languages_reading}}-</h4>
+      <h4>{{lan.languages_speaking}}-</h4>
+      <h4>{{lan.languages_writing}}</h4>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="center center">
+      <mat-chip-list *ngFor="let keyword of cv.knowledge" style="margin:5px">
+        <mat-chip ngClass="{{keyword.knowledge_level}}" selected>{{keyword.knwoledge_name}}</mat-chip>
       </mat-chip-list>
     </div>
+    <mat-chip-list ngClass="legend-container" fxLayoutAlign="end center">
+      <mat-chip ngClass="Bajo legend" selected>Bajo</mat-chip>
+      <mat-chip ngClass="Medio legend" selected>Medio</mat-chip>
+      <mat-chip ngClass="Alto legend" selected>Alto</mat-chip>
+    </mat-chip-list>
   </mat-card>
 
 </div>
