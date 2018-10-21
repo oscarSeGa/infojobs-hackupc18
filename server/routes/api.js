@@ -21,26 +21,47 @@ router.get('/', (req, res) => {
     let k = user.knowledge;
     console.log(k);
     
+    var newl = [];
+    var newk = [];
+
+    k.forEach(function(element) {
+      newk.push(element.knwoledge_name)
+    });
+    console.log("newk = " + newk);
+    
+    l.forEach(function(element) {
+      newl.push(element.languages_name)
+    });
+    console.log("newl = " + newl);
+    
+    
+
     ofertas.offers.map(function(oferta) {
       console.log(oferta.keywords);
       let max = oferta.keywords.length + oferta.languages.length + 1;
-      let rating = 0;
-      const keywordsintersection = oferta.keywords.filter(element => k.includes(element));
-      rating += keywordsintersection;
-      const languagesIntersection = oferta.languages.filter(element => l.includes(element));
+      var rating = 0;
+      const keywordsintersection = oferta.keywords.filter(element => newk.includes(element));
+      console.log(keywordsintersection);
+      rating = rating + keywordsintersection.length;
+      const languagesIntersection = oferta.languages.filter(element => newl.includes(element));
+      rating = rating + languagesIntersection.length;
       if (oferta.city == p) {
-        rating++;
+        rating = rating + 1;
       }
-      if (oferta.languages.length == languagesIntersection) {
-        rating++;
+     /* if (oferta.languages.length == languagesIntersection.length) {
+        rating += languagesIntersection.length;
       } else {
-        rating = 1;
-        //return
-      }
+        rating = min
+      }*/
+      console.log("rating = " + rating);
+      console.log("max = " + max);
+      console.log("rating/max = " + rating/max);
       
-      console.log(max/rating);
       
-      return max/rating;
+      
+      oferta.rating = rating/max;
+      
+      return;
     });
     return res.status(200).json(ofertas)
   });
