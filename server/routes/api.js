@@ -12,11 +12,34 @@ router.get('/', (req, res) => {
   router.route('/recomendations')
   .get(function (req, res) {
     var ofertas = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../src/assets/ofertas.json'), 'utf8'));
-    var user = JSON.parse(fs.readFileSync(Path.resolve(__dirname,'../../src/assets/user.json'),'utf8'));
+    var user = JSON.parse(fs.readFileSync(path.resolve(__dirname,'../../src/assets/user.json'),'utf8'));
     console.log(user);
+    let p = user.personal_information.place;
+    let l = user.languages;
+    let k = user.knowledge;
+
+
+
     
     ofertas.offers.map(function(oferta) {
-
+      console.log(oferta.keywords);
+      let max = oferta.keywords.length + oferta.language.length + 1;
+      let rating = 0;
+      const keywordsintersection = oferta.keywords.filter(element => k.includes(element));
+      rating += keywordsintersection;
+      const languagesIntersection = oferta.language.filter(element => l.includes(element));
+      if (oferta.city == p) {
+        rating++;
+      }
+      if (oferta.language.length == languagesIntersection) {
+        rating++;
+      } else {
+        rating = 0;
+        return
+      }
+      console.log(max/rating);
+      
+      return max/rating;
     });
     return res.status(200).json(ofertas)
   });
