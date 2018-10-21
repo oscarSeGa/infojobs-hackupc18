@@ -527,6 +527,79 @@
         "applications":"0",
         "subSegment":11,
         "executive":false
+     },
+     {
+        "id": "d3becb664e4dfd92dda17cb0289e83",
+        "title": "INVESTIGADOR INTELIGENCIA ARTIFICIAL",
+        "visible":true,
+        "province": {
+           "id": 9,
+           "value": "Barcelona"
+        },
+        "city": "Barcelona",
+        "languages":[
+            "eng",
+            "fra"
+         ],
+        "link": "https://www.infojobs.net/barcelona/investigador-inteligencia-artificial-seguridad/of-id3becb664e4dfd92dda17cb0289e83",
+        "keywords":[
+            "inteligencia artifical",
+            "universitario",
+            "informatica",
+            "developer"
+         ],
+        "category": {
+           "id": 150,
+           "value": "Informática y telecomunicaciones"
+        },
+        "contractType": {
+           "id": 1,
+           "value": "Indefinido"
+        },
+        "subcategory": {
+           "id": 3114,
+           "value": "Telecomunicaciones"
+        },
+        "salaryMin": {
+           "id": 0,
+           "value": ""
+        },
+        "salaryMax": {
+           "id": 0,
+           "value": ""
+        },
+        "salaryPeriod": {
+           "id": 0,
+           "value": ""
+        },
+        "experienceMin": {
+           "id": 3,
+           "value": "Al menos 3 años"
+        },
+        "workDay": {
+           "id": 1,
+           "value": "Completa"
+        },
+        "study": {
+           "id": 130,
+           "value": "Ingeniería Superior"
+        },
+        "published": "2018-09-07T10:50:17.000Z",
+        "updated": "2018-09-07T10:50:17.000Z",
+        "author": {
+           "id": "10354545049525370856868015255114109531",
+           "name": "FUNDACIÓ EURECAT",
+           "uri": "http://www.infojobs.net//api.infojobs.net/fundacio-eurecat/em-i10354545049525370856868015255114109531",
+           "corporateResponsive": false,
+           "showCorporativeHeader": false
+        },
+        "requirementMin": "FORMACIÓN:",
+        "bold": false,
+        "urgent": false,
+        "color": false,
+        "applications": "15",
+        "subSegment": 22,
+        "executive": false
      }
     ]
  }
