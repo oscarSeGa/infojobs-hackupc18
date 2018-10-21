@@ -23,6 +23,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { CvComponent } from './cv/cv.component';
 import { RegisterComponent } from './register/register.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatRippleModule,
     MatTooltipModule,
     DragDropModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
