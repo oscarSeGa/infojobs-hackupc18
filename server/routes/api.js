@@ -45,14 +45,9 @@ router.get('/', (req, res) => {
       rating = rating + keywordsintersection.length;
       const languagesIntersection = oferta.languages.filter(element => newl.includes(element));
       rating = rating + languagesIntersection.length;
-      if (oferta.city == p) {
+      if (oferta.city.toLowerCase() == p.toLowerCase()) {
         rating = rating + 1;
       }
-     /* if (oferta.languages.length == languagesIntersection.length) {
-        rating += languagesIntersection.length;
-      } else {
-        rating = min
-      }*/
       console.log("rating = " + rating);
       console.log("max = " + max);
       console.log("rating/max = " + rating/max);
